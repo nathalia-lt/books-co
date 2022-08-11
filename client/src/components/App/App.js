@@ -1,8 +1,10 @@
-
+import key from '../../key'
 
 function App() {
   return (
-    <div></div>
+    <div>
+      
+    </div>
   );
 }
 
