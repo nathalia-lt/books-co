@@ -3,6 +3,7 @@ import key from '../../key'
 import axios from 'axios'
 import {Route, Routes} from 'react-router-dom'
 import Home from '../Home/Home'
+import Header from '../Header/Header'
 
 function App() {
 
@@ -16,6 +17,10 @@ function App() {
 
   return (
     <div>
+      <Header
+      setTestData={setTestData}
+      />
+      <hr></hr>
     <Routes>
     <Route path= '/*' element={
     <Home

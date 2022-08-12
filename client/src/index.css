@@ -46,4 +46,11 @@
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 3%;
 }/*# sourceMappingURL=index.css.map */
