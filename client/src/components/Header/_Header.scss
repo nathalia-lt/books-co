@@ -18,12 +18,14 @@
     cursor: pointer;
     background: url('./Images/searchSize25.png') right no-repeat;
     transition: 1s;
+    color: transparent;
 &:focus{//make the searchBar grow
     width: 250px;
     margin-left: 27vw;
+    cursor: text;
     transition: 1s;
     background-color: rgba(186, 185, 185, 0.245);
-    color: whitesmoke;
+    color: black;
     &::placeholder{
         color: rgba(128, 128, 128, 0.6);
         transition: 1s;
