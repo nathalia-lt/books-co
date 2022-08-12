@@ -8,7 +8,7 @@
   background-color: rgb(127, 234, 255);
   border-radius: 3%;
   margin-top: 3%;
-  margin-right: 5%;
+  margin-right: 2.5%;
 }
 
 .bookCover {
@@ -23,7 +23,6 @@
 .bookAuthor {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
-  margin-left: 4%;
 }
 
 .bookCardHalf {
@@ -39,6 +38,8 @@
 }
 .bookCardHalf.bottom {
   padding-top: 0px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .bookContainer {
@@ -53,4 +54,36 @@
   flex-direction: row;
   justify-content: space-evenly;
   margin-top: 3%;
+}
+
+.searchBar {
+  align-self: right;
+  margin-left: 39vw;
+  font-size: 18px;
+  width: 80px;
+  border: none;
+  cursor: pointer;
+  background: url("./Images/searchSize25.png") right no-repeat;
+  transition: 1s;
+}
+.searchBar:focus {
+  width: 250px;
+  margin-left: 27vw;
+  transition: 1s;
+  background-color: rgba(186, 185, 185, 0.245);
+  color: whitesmoke;
+}
+.searchBar:focus::-moz-placeholder {
+  color: rgba(128, 128, 128, 0.6);
+  -moz-transition: 1s;
+  transition: 1s;
+}
+.searchBar:focus:-ms-input-placeholder {
+  color: rgba(128, 128, 128, 0.6);
+  -ms-transition: 1s;
+  transition: 1s;
+}
+.searchBar:focus::placeholder {
+  color: rgba(128, 128, 128, 0.6);
+  transition: 1s;
 }/*# sourceMappingURL=index.css.map */

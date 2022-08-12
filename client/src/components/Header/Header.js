@@ -22,7 +22,6 @@ export default function Header( {setTestData} ) {
     }
 
 
-
     return (
         <div className='header'>
             <div> Clubs </div>
@@ -32,7 +31,7 @@ export default function Header( {setTestData} ) {
                 type= 'text'
                 value={searchTerm}
                 onChange={handleSearchChange}
-                placeholder= 'search'
+                placeholder= 'Search'
 
                 />
                 </form>

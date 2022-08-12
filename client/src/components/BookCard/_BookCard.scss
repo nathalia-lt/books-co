@@ -10,7 +10,7 @@
     background-color: rgb(127, 234, 255);
     border-radius: 3%;
     margin-top: 3%;
-    margin-right: 5%;
+    margin-right: 2.5%;
 }
 
 .bookCover{
@@ -27,7 +27,6 @@
 .bookAuthor{
     font-family:Arial, Helvetica, sans-serif;
     font-size: 12px;
-    margin-left: 4%;
 }
 
 .bookCardHalf{
@@ -41,6 +40,8 @@
         padding-top: 15px;
     }&.bottom{
         padding-top: 0px;
+        flex-direction: column;
+        align-items: center;
     }
 }
 

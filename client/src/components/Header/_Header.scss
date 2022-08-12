@@ -1,9 +1,33 @@
 @use '../../styles' as s;
 
 
+
 .header{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 3%;
+}
+
+.searchBar{
+    align-self: right;
+    margin-left: 39vw;
+    font-size: 18px;
+    width: 80px;
+    border: none;
+    cursor: pointer;
+    background: url('./Images/searchSize25.png') right no-repeat;
+    transition: 1s;
+&:focus{//make the searchBar grow
+    width: 250px;
+    margin-left: 27vw;
+    transition: 1s;
+    background-color: rgba(186, 185, 185, 0.245);
+    color: whitesmoke;
+    &::placeholder{
+        color: rgba(128, 128, 128, 0.6);
+        transition: 1s;
+    }
+}
+
 }
