@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import key from '../../key'
 import axios from 'axios'
 import {Route, Routes} from 'react-router-dom'
+import Home from '../Home/Home'
 
 function App() {
 
@@ -17,7 +18,9 @@ function App() {
     <div>
     <Routes>
     <Route path= '/*' element={
-      <div> ola</div>
+    <Home
+    testData={testData}
+    />
     }
 
     />

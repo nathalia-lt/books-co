@@ -1,7 +1,12 @@
+import BookContainer from "../BookContainer/BookContainer";
 
 
-export default function Home(){
+export default function Home( {testData} ){
     return(
-        <div></div>
+        <div>
+            <BookContainer
+            testData={testData}
+            />
+        </div>
     )
 }
