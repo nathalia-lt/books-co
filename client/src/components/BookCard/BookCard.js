@@ -1,7 +1,9 @@
 import {useState} from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 
 export default function BookCard( {book} ){
+    let navigate = useNavigate() //I use useNavigate to send me to a new page
 
     //algumas pesquisas nao mostram a capa. Para esconder isso:
 
@@ -42,14 +44,18 @@ export default function BookCard( {book} ){
 
     let bookAuthorText = displayTitle ?  '' : bookAuthor
 
+//------------------------------------------------------------
+//open a new page 
 
-
+function handleCoverClick(){
+    navigate('/book/' + book.id)
+}
 
 
     return(
             <div className='bookCard' >
                 <div className='bookCardHalf top'>
-                <img className='bookCover' src={bookCover} alt='' />
+                <img className='bookCover' src={bookCover} alt=''  onClick={handleCoverClick}  />
                     </div>
                 <div className='bookCardHalf bottom' >
                 <div className='bookTitle' onMouseOver={handleOnTitleHover} onMouseOut={handleOffTitleHover} >{bookTitleText}</div>

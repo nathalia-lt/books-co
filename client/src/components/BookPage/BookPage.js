@@ -1,6 +1,6 @@
 
 
-export default function BookPage(){
+export default function BookPage(  ){
     return(
         <div></div>
     )

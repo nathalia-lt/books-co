@@ -12,6 +12,7 @@
 }
 
 .bookCover {
+  cursor: pointer;
   height: 220px;
   width: 160px;
 }
