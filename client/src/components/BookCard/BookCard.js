@@ -29,14 +29,24 @@ export default function BookCard( {book} ){
 
     let bookTitleText =  displayTitle ?  book.volumeInfo.title : bookTitle
 
+    //------------------------------------------------------
+
+    //I want the author to dispper when I hover over the title
+
+    let bookAuthorText = displayTitle ?  '' : bookAuthor
+
+
+
+
+
     return(
             <div className='bookCard' >
                 <div className='bookCardHalf top'>
                 <img className='bookCover' src={bookCover} alt='' />
                     </div>
                 <div className='bookCardHalf bottom' >
-                <div className='bookTitle' onMouseOver={handleOnTitleHover} onMouseOut={handleOffTitleHover} >  {bookTitleText} </div>
-                <div className='bookAuthor'> by: {bookAuthor} </div>
+                <div className='bookTitle' onMouseOver={handleOnTitleHover} onMouseOut={handleOffTitleHover} >{bookTitleText}</div>
+                <div className='bookAuthor'>{bookAuthorText}</div>
                 </div>
             </div>
     )

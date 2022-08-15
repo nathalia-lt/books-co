@@ -88,4 +88,15 @@
 .searchBar:focus::placeholder {
   color: rgba(128, 128, 128, 0.6);
   transition: 1s;
+}
+
+body {
+  background-color: antiquewhite;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+.hidden {
+  display: hidden;
+  color: transparent;
 }/*# sourceMappingURL=index.css.map */
