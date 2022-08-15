@@ -1,4 +1,4 @@
-
+import {useState} from "react";
 
 
 export default function BookCard( {book} ){
@@ -15,8 +15,19 @@ export default function BookCard( {book} ){
 
     //console.log(bookAuthor)
 
+    //When I hover shows the full title of my book
 
+    let [displayTitle, setDisplayTitle] = useState(false)
 
+    function handleOnTitleHover(){
+        setDisplayTitle(true)
+    }
+
+    function handleOffTitleHover(){
+        setDisplayTitle(false)
+    }
+
+    let bookTitleText =  displayTitle ?  book.volumeInfo.title : bookTitle
 
     return(
             <div className='bookCard' >
@@ -24,7 +35,7 @@ export default function BookCard( {book} ){
                 <img className='bookCover' src={bookCover} alt='' />
                     </div>
                 <div className='bookCardHalf bottom' >
-                <div className='bookTitle'>  {bookTitle} </div>
+                <div className='bookTitle' onMouseOver={handleOnTitleHover} onMouseOut={handleOffTitleHover} >  {bookTitleText} </div>
                 <div className='bookAuthor'> by: {bookAuthor} </div>
                 </div>
             </div>
