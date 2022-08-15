@@ -17,3 +17,21 @@ body{
     display: hidden;
     color: transparent;
 }
+
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+    background-color: greenyellow;
+}
+
+.sideBar{
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+}
+
+.display{
+    display: flex;
+    flex-direction: column; 
+    background-color: blueviolet;
+}
