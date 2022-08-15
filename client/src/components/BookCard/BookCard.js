@@ -3,8 +3,13 @@ import {useState} from "react";
 
 export default function BookCard( {book} ){
 
+    //algumas pesquisas nao mostram a capa. Para esconder isso:
+
+    let bookCover = book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ''
+
+
     //I need book cover, book title and author to display on the browser
-    let bookCover = book.volumeInfo.imageLinks.thumbnail
+    //let bookCover = book.volumeInfo.imageLinks.thumbnail
     //console.log(bookCover)
 
     //Toda vez que o tittulo e muito grande ele empurra o author pra baixo tirando do card. Para evitar isso, vou fazer a ternary
@@ -20,7 +25,9 @@ export default function BookCard( {book} ){
     let [displayTitle, setDisplayTitle] = useState(false)
 
     function handleOnTitleHover(){
-        setDisplayTitle(true)
+        if (book.volumeInfo.title.length > 34){
+            setDisplayTitle(true)            
+        }
     }
 
     function handleOffTitleHover(){
