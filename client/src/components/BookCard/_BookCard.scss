@@ -23,6 +23,12 @@
 .bookTitle{
     //line-height: 0.1em;
     font-size: 18px;
+    &.extended{
+        font-size: 16px;
+    }
+    &.shrunk{
+        font-size: 16px;
+    }
 }
 
 .bookAuthor{
