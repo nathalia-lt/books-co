@@ -6,6 +6,13 @@ export default function FeaturedBook( {book}){
 
     let synopsis = book.volumeInfo.description.replace(/<(?:"[^"]"['"]|'[^']'['"]|[^'">])+>/g, '')
 
+    //to shrink the sinopsis when it is too big
+
+    //what is my conditional? Is relate do the length
+    //if it is less than 300 then give me the whole synopsis otherwise shorten it and use ...
+
+    let shortenedBookSynopsis = synopsis.length < 1000 ? synopsis : synopsis.slice(0,1000) + '...'
+
     let dateTime = new Date(book.volumeInfo.publishedDate) //new date takes in strings, I need to use new date class
     let publishedYear = dateTime.getFullYear()
 
@@ -19,7 +26,7 @@ export default function FeaturedBook( {book}){
 
     let bookAuthor = book.volumeInfo.authors
 
-
+    
 
 
 
@@ -34,7 +41,7 @@ export default function FeaturedBook( {book}){
                 <div className='bookPageTitle'>{bookTitle}</div>
                 <div className='bookPageTitle'>{bookSubTitle}</div>
                 <hr></hr>
-                <div className="synopsis">{synopsis}</div>
+                <div className="synopsis">{shortenedBookSynopsis}</div>
                 <div className='Author'><b>{bookAuthor} </b></div>
                 <hr></hr>
                 <div className='bookInfo'><b>Pages:</b> {pageCount}</div>
