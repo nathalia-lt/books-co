@@ -8,7 +8,7 @@ import BookPage from '../BookPage/BookPage'
 
 function App() {
 
-  let booksUrl = 'https://www.googleapis.com/books/v1/volumes?q=thesimplewild&printType=books&key=' + key
+  let booksUrl = 'https://www.googleapis.com/books/v1/volumes?q=thesimplewild&maxResults=30&printType=books&key=' + key
 
   let [testData, setTestData] = useState([])
   useEffect(() => {
