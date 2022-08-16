@@ -1,1 +1,28 @@
 @use '../../styles' as s;
+
+.bookPageCard{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: pink;
+    height: 75%;
+    width: 80%;
+}
+
+.bookPageCardCover{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(96, 96, 203);
+    height: 100%;
+    width: 35%;
+}
+
+.bookPageCardInformation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(212, 127, 127);
+    height: 100%;
+    width: 65%;
+}

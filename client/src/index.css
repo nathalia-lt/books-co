@@ -5,7 +5,7 @@
   align-content: center;
   width: 175px;
   height: 300px;
-  background-color: rgb(127, 234, 255);
+  background-color: #66C4C7;
   border-radius: 3%;
   margin-top: 3%;
   margin-right: 2.5%;
@@ -48,6 +48,33 @@
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.bookPageCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: pink;
+  height: 75%;
+  width: 80%;
+}
+
+.bookPageCardCover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(96, 96, 203);
+  height: 100%;
+  width: 35%;
+}
+
+.bookPageCardInformation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(212, 127, 127);
+  height: 100%;
+  width: 65%;
 }
 
 .header {
@@ -96,7 +123,7 @@
 }
 
 body {
-  background-color: antiquewhite;
+  background-color: rgb(250, 235, 215);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: black;
 }
@@ -110,16 +137,27 @@ body {
   display: flex;
   flex-direction: row;
   background-color: greenyellow;
+  height: 730px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .sideBar {
   display: flex;
   flex-direction: column;
-  background-color: red;
+  background-color: #95BDB6;
+  height: 100%;
+  width: 25%;
+  align-items: center;
 }
 
 .display {
   display: flex;
   flex-direction: column;
-  background-color: blueviolet;
+  background-color: #FE8A7F;
+  height: 100%;
+  width: 75%;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=index.css.map */

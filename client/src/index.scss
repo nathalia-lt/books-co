@@ -8,7 +8,7 @@
 //Semi colon
 
 body{
-    background-color: antiquewhite;
+    background-color: rgb(250, 235, 215);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: black;
 }
@@ -22,16 +22,27 @@ body{
     display: flex;
     flex-direction: row;
     background-color: greenyellow;
+    height: 730px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 .sideBar{
     display: flex;
     flex-direction: column;
-    background-color: red;
+    background-color: #95BDB6;
+    height: 100%;
+    width: 25%;
+    align-items: center;
 }
 
 .display{
     display: flex;
     flex-direction: column; 
-    background-color: blueviolet;
+    background-color: #FE8A7F;
+    height: 100%;
+    width: 75%;
+    align-items: center;
+    justify-content: center;
 }
