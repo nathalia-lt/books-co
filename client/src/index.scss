@@ -47,3 +47,24 @@ body{
     align-items: center;
     justify-content: center;
 }
+
+//for the scroll bar styling
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #C1554E;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    transition: .5s;
+    &:hover{
+        background-color: #FFC1B3;
+        transition: .5s;
+    }
+
+    &:active{
+        background-color: #d6a094;
+    }
+  }
