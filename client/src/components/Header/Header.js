@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-export default function Header( {setTestData} ) {
+export default function Header( {setSearchResults} ) {
     let navigate = useNavigate() //I use useNavigate to send me to a new page
 
     let [searchTerm, setSearchTerm] = useState('')
@@ -20,11 +20,12 @@ export default function Header( {setTestData} ) {
 
     function handleSearchSubmit(e){
         e.preventDefault()
-        console.log("🚀 ~ file: Header.js ~ line 24 ~ handleSearchSubmit ~ booksUrl", booksUrl)
         axios.get(booksUrl)
         .then(r => {
             if (r.data.items){
-                setTestData(r.data)}
+                navigate('/search/'+ searchTerm)
+            }
+                
         else{
             alert('No results found')
         }

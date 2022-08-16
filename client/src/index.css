@@ -194,4 +194,26 @@ body {
   width: 75%;
   align-items: center;
   justify-content: center;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #C1554E;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #FFC1B3;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: #d6a094;
 }/*# sourceMappingURL=index.css.map */
