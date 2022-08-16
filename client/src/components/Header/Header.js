@@ -22,7 +22,13 @@ export default function Header( {setTestData} ) {
         e.preventDefault()
         console.log("🚀 ~ file: Header.js ~ line 24 ~ handleSearchSubmit ~ booksUrl", booksUrl)
         axios.get(booksUrl)
-        .then(r => setTestData(r.data))
+        .then(r => {
+            if (r.data.items){
+                setTestData(r.data)}
+        else{
+            alert('No results found')
+        }
+        })
     }
 
     //----------------------------------------
