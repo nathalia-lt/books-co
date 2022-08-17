@@ -22,7 +22,8 @@ export default function BookCard( {book} ){
 
 
     //console.log(bookTitle)
-    let bookAuthor = book.volumeInfo.authors[0].length > 25 ? book.volumeInfo.authors[0].slice(0,20)+ '...' : book.volumeInfo.authors[0]
+    let bookAuthor =  book.volumeInfo.authors ? (book.volumeInfo.authors[0].length > 25 ? book.volumeInfo.authors[0].slice(0,20)+ '...' : book.volumeInfo.authors[0]): ''
+    //second ternary: if author does not exist give me the empty string.
 
     //console.log(bookAuthor)
 

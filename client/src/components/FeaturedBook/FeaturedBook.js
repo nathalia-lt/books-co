@@ -48,6 +48,12 @@ export default function FeaturedBook( {book}){
 
     let showSynopsis = synopsisHover ? synopsis : shortenedBookSynopsis 
 
+    //when I hover over show the full synopsis for books over 1000 car
+    let displayFullSynopsis = synopsisHover && synopsis.length > 1000 ? <div onMouseOver={handleOnHover} onMouseOut={handleOffHover} className='fullSynopsis'> 
+    <h3> Synopsis: </h3>
+    <div>{synopsis} </div>
+    </div> : null
+
 
     return(
         <div className='bookPageCard'>
@@ -55,12 +61,12 @@ export default function FeaturedBook( {book}){
             <img className='bookPageCardCover' src={bookCover} alt='' />
         </div>
         <div className='bookPageCardMain'>
-
             <div className='bookPageCardInformation' >
                 <div className='bookPageTitle'>{bookTitle}</div>
                 <div className='bookPageTitle'>{bookSubTitle}</div>
                 <hr></hr>
-                <div className="synopsis" onMouseOver={handleOnHover} onMouseOut={handleOffHover}  >{showSynopsis}</div>
+                <div className="synopsis" onMouseOver={handleOnHover} onMouseOut={handleOffHover}  >{shortenedBookSynopsis}</div>
+                {displayFullSynopsis}
                 <div className='Author'><b>{bookAuthor} </b></div>
                 <hr></hr>
                 <div className='bookInfo'><b>Pages:</b> {pageCount}</div>

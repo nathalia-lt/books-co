@@ -156,6 +156,22 @@
   font-size: 14px;
 }
 
+.fullSynopsis {
+  position: absolute;
+  margin-left: -1.8%;
+  margin-top: 3%;
+  width: 36%;
+  font-size: 16px;
+  background-color: aquamarine;
+  border-radius: 5px;
+  padding: 20px;
+}
+.fullSynopsis h3 {
+  padding-top: 0px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
 body {
   background-color: rgb(250, 235, 215);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
