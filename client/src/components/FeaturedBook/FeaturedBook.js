@@ -58,7 +58,9 @@ export default function FeaturedBook( {book}){
     return(
         <div className='bookPageCard'>
         <div className='bookPageCardSide' >
+            <div className ='imageWrap'>
             <img className='bookPageCardCover' src={bookCover} alt='' />
+            </div>
         </div>
         <div className='bookPageCardMain'>
             <div className='bookPageCardInformation' >

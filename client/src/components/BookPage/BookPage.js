@@ -58,9 +58,13 @@ export default function BookPage() {
         return clickedStars >= num || hoverStars >= num ? '★' : '☆'
     }
 
+function handleSubmit(e){
+    e.preventDefault()
+}
 
-
-
+function starClass(num) {
+    return clickedStars >= num || hoverStars >= num ? 'star active' : 'star' 
+}
 
 
 
@@ -84,18 +88,19 @@ export default function BookPage() {
                                 {/* and it requires an input (like in the function handleClickStar) */}
                                 {/* that function will automatically be invoked */}
                                 {/* the solution is to make another function and place the desired function in it  */}
-                                <div onClick={() => { handleClickStar(1) }} onMouseOver={() => handleHoverStar(1)}>{displayStars(1)}</div>
-                                <div onClick={() => { handleClickStar(2) }} onMouseOver={() => handleHoverStar(2)}>{displayStars(2)}</div>
-                                <div onClick={() => { handleClickStar(3) }} onMouseOver={() => handleHoverStar(3)}>{displayStars(3)}</div>
-                                <div onClick={() => { handleClickStar(4) }} onMouseOver={() => handleHoverStar(4)}>{displayStars(4)}</div>
-                                <div onClick={() => { handleClickStar(5) }} onMouseOver={() => handleHoverStar(5)}>{displayStars(5)}</div>
+                                <div className={starClass(1)} onClick={() => { handleClickStar(1) }} onMouseOver={() => handleHoverStar(1)}>{displayStars(1)}</div>
+                                <div className={starClass(2)} onClick={() => { handleClickStar(2) }} onMouseOver={() => handleHoverStar(2)}>{displayStars(2)}</div>
+                                <div className={starClass(3)} onClick={() => { handleClickStar(3) }} onMouseOver={() => handleHoverStar(3)}>{displayStars(3)}</div>
+                                <div className={starClass(4)} onClick={() => { handleClickStar(4) }} onMouseOver={() => handleHoverStar(4)}>{displayStars(4)}</div>
+                                <div className={starClass(5)} onClick={() => { handleClickStar(5) }} onMouseOver={() => handleHoverStar(5)}>{displayStars(5)}</div>
                             </div>
                         </div>
-                        <form>
+                        <form className='reviewForm' >
                             <input
                                 type='text'
+                                
                             />
-                            <button>Submit</button>
+                            <button onClick={handleSubmit} >Submit</button>
                         </form>
                     </div>
                 </div>

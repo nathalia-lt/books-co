@@ -83,6 +83,26 @@
   display: flex;
   flex-direction: row;
 }
+.stars div {
+  margin-right: 2%;
+}
+
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+}
+.reviewForm input {
+  width: 70%;
+  height: 100px;
+  text-align: start;
+}
+.reviewForm button {
+  width: 10%;
+}
+
+.active {
+  color: gold;
+}
 
 .header {
   display: flex;
@@ -134,9 +154,11 @@
   flex-direction: row;
   justify-content: center;
   background-color: pink;
-  height: 75%;
-  width: 80%;
-  margin-top: 8%;
+  height: 770px;
+  width: 860px;
+  margin-top: 26%;
+  margin-bottom: 8%;
+  border-radius: 3%;
 }
 
 .bookPageCardSide {
@@ -147,12 +169,16 @@
   background-color: rgb(96, 96, 203);
   height: 100%;
   width: 35%;
+  border-top-left-radius: 3%;
+  border-bottom-left-radius: 3%;
 }
 
 .bookPageCardMain {
   background-color: rgb(167, 95, 95);
   height: 100%;
   width: 65%;
+  border-top-right-radius: 3%;
+  border-bottom-right-radius: 3%;
 }
 
 .bookPageCardInformation {
@@ -163,11 +189,17 @@
 }
 
 .bookPageCardCover {
-  height: 45%;
-  width: 55%;
+  height: 240px;
+  width: 170px;
+  border-radius: 3%;
+}
+
+.imageWrap {
+  padding: 40%;
 }
 
 .bookPageTitle {
+  margin-top: 2%;
   align-self: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 20px;
