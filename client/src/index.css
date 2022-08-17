@@ -18,6 +18,7 @@
 }
 
 .bookTitle {
+  text-align: center;
   font-size: 18px;
 }
 .bookTitle.extended {
