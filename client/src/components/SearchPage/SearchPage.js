@@ -26,10 +26,20 @@ export default function SearchPage( {searchResults, setSearchResults} ){
 
 
     return(
-        <div>
+        <div className="searchPageContainer">
+            <div className='bigSearchCard'> 
+            <form>
+                <input
+                className= 'bigSearch' 
+                type= 'text'
+                />
+            </form>
+            <div className='filterRow '> Filters: </div>
+            </div>
             <BookContainer
             testData={searchResults}
             />
+
         </div>
     ) 
 }
