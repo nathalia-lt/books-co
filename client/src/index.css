@@ -113,6 +113,8 @@
 
 .title {
   cursor: pointer;
+  font-size: 30px;
+  margin-left: 35%;
 }
 
 .searchBar {
@@ -166,7 +168,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(96, 96, 203);
+  background-color: #C1554E;
   height: 100%;
   width: 35%;
   border-top-left-radius: 3%;
@@ -174,7 +176,7 @@
 }
 
 .bookPageCardMain {
-  background-color: rgb(167, 95, 95);
+  background-color: #FFC1B3;
   height: 100%;
   width: 65%;
   border-top-right-radius: 3%;
@@ -223,7 +225,7 @@
   margin-top: 3%;
   width: 36%;
   font-size: 16px;
-  background-color: aquamarine;
+  background-color: #66C4C7;
   border-radius: 5px;
   padding: 20px;
 }

@@ -42,7 +42,7 @@ export default function Header( {setSearchResults} ) {
     return (
         <div className='header'>
             <div> Clubs </div>
-            <div onClick={handleHomeClick} className= 'title'> Header </div>
+            <div onClick={handleHomeClick} className= 'title'> All Booked Up </div>
             <form onSubmit={handleSearchSubmit} >
                 <input className='searchBar'
                 type= 'text'
