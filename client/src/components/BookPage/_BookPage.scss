@@ -19,16 +19,21 @@
 .newReviewTitle{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    align-content: center;
 }
 
 .stars{
     cursor: pointer;
+    margin-left: 1%;
     display: flex;
     flex-direction: row;
+    font-size: 18px ;
     div{
-        margin-right: 2%;
+        margin-right: 3%;
     }
 }
+
 
 .reviewForm{
     display: flex;
@@ -49,3 +54,8 @@
     color: gold;
 }
 
+.userReviews{
+    margin-top: -1%;
+    display: flex;
+    flex-direction: column;
+}

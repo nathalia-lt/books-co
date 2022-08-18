@@ -30,4 +30,15 @@
     word-wrap: break-word;
 }
 
+.reactionCounter{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1%;
+    h5{
+        margin-top: 2px;
+        margin-bottom: 3px;
+        margin-right: 4px;
+    }
+}
+
 

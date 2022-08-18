@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import key from "../../key"
 import axios from "axios"
 import FeaturedBook from "../FeaturedBook/FeaturedBook"
+import BookReview from "../BookReview/BookReview"
 
 
 export default function BookPage() {
@@ -66,6 +67,48 @@ function starClass(num) {
     return clickedStars >= num || hoverStars >= num ? 'star active' : 'star' 
 }
 
+//------------------------------------------------------------------
+//------------------------------------------------------------------
+//mock data to pass into bookReview component
+
+let demoReviews = [
+    {
+        'username': 'test',
+        'rating': 5,
+        'text': 'Prudence profonde coupoles prennent roc pas precieux pourquoi. Ennemies massacre triomphe les cavernes des six toi. Je or devant blason palais et epouse sa atroce. Se on rendre ah sortit annees jusque jambes voyage. Chantant traverse soutenir net campagne sur remettre. Demeurons cet six art toutefois resterait les. Firmament sortaient net echauffer aux reprendre preferait eux.',
+        'date': 'Jan 10, 2022'
+    },
+    {
+        'username': 'test-2',
+        'rating': 1,
+        'text': 'Prudence profonde coupoles prennent roc pas precieux pourquoi. Ennemies massacre triomphe les cavernes des six toi. Je or devant blason palais et epouse sa atroce. Se on rendre ah sortit annees jusque jambes voyage. Chantant traverse soutenir net campagne sur remettre. Demeurons cet six art toutefois resterait les. Firmament sortaient net echauffer aux reprendre preferait eux.',
+        'date': 'Jan 10, 2022'
+    },
+    {
+        'username': 'test-3',
+        'rating': 2,
+        'text': 'Prudence profonde coupoles prennent roc pas precieux pourquoi. Ennemies massacre triomphe les cavernes des six toi. Je or devant blason palais et epouse sa atroce. Se on rendre ah sortit annees jusque jambes voyage. Chantant traverse soutenir net campagne sur remettre. Demeurons cet six art toutefois resterait les. Firmament sortaient net echauffer aux reprendre preferait eux.',
+        'date': 'Jan 10, 2022'
+    }
+]
+
+let demoReviewsToDisplay = demoReviews.map(review => {
+    return(
+        <BookReview
+        key={review.username}
+        review={review}
+        />
+        )
+    })
+    
+    
+    //------------------------------------------------------------------
+//I take the rating from google API
+
+let avgRating = pageData.volumeInfo.averageRating
+let ratingNum = pageData.volumeInfo.ratingsCount
+
+
 
 
     return (
@@ -77,11 +120,11 @@ function starClass(num) {
                 />
                 <div className='reviewContainer' >
                     <div className='reviewInfo'>
-                        <h2>Average Rating: 4.5 ⭐️</h2>
-                        <h4>Number of ratings: 10</h4>
+                        <h2>Average Rating: {avgRating} ⭐️</h2>
+                        <h4> Number of Ratings: {ratingNum} </h4>
                         <hr></hr>
                         <div className="newReviewTitle">
-                            <label>Write a Review: </label>
+                            <h3>Write a Review: </h3>
                             <div className="stars" onMouseOut={handleHoverStarOff}>
                                 {/* I make an anonymous function because all functions that are placed in an element's attribute must not have inputs */}
                                 {/* if you place a function in an element's attribute (onClick,onMouseOver,etc) */}
@@ -102,6 +145,9 @@ function starClass(num) {
                             />
                             <button onClick={handleSubmit} >Submit</button>
                         </form>
+                        <div className="userReviews" >
+                            {demoReviewsToDisplay}
+                        </div>
                     </div>
                 </div>
             </div>
