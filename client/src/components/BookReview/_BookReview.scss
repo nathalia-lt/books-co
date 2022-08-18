@@ -1,0 +1,33 @@
+@use '../../styles' as s;
+
+
+.userReviewCard{
+    // background-color: salmon;
+    padding: 10px;
+    width: 97.5%;
+}
+
+
+.userReviewId{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userReviewTitle{
+    span{
+        color: white;
+    }
+}
+
+.userReviewDate{
+    font-size: 15px;
+}
+
+.userReviewText{
+    display: flex;
+    flex-direction: row;
+    word-wrap: break-word;
+}
+
+
