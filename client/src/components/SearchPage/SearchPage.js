@@ -11,9 +11,60 @@ export default function SearchPage({ searchResults, setSearchResults }) {
     let searchTerm = params.searchTerm
     
     let booksUrl = 'https://www.googleapis.com/books/v1/volumes?q=' + searchTerm + '&maxResults=30&printType=books&key=' + key
+
+
+//----------------------------------------------------------------------------------------------
+
+    //Filter by author and genre
     
     let [displayAuthor, setDisplayAuthor] = useState(false)
     let [displayGenre, setDisplayGenre] = useState(false)
+
+    //here I am just tagle to open the text space in my filter
+function handleToggleAuthorDisplay(){
+    setDisplayAuthor(!displayAuthor)
+}
+
+function handleToggleGenreDisplay(){
+    setDisplayGenre(!displayGenre)
+}
+
+
+
+    //-------------------------------------------------------------------------------------------
+    //making the filter search work
+
+    let [authorSearch, setAuthorSearch] = useState('')
+    let [genreSearch, setGenreSearch] = useState('')
+
+    function handleAuthorChange(event){
+        setAuthorSearch(event.target.value)
+    }
+
+    function handleGenreChange(event){
+        setGenreSearch(event.target.value)
+    }
+//-----------------------------------------------------------------------
+
+    //I want to make my text space appear when I toggle the option. For it I will make a ternary.
+//AM I displaying the author? if i am .... I want tthe text space
+
+let displayAuthorSearchText = displayAuthor ? <input className='searchAuthor'  
+value ={authorSearch}
+onChange={handleAuthorChange}
+type='text'
+/> : null
+
+let displayGenreSearchText = displayGenre ? <input className='searchGenre'
+value={genreSearch}
+onChange={handleGenreChange}
+type='text'
+/> : null
+
+
+
+
+
 
 
     useEffect(() => {
@@ -27,28 +78,8 @@ export default function SearchPage({ searchResults, setSearchResults }) {
     if (!searchResults.items) return null
 
 //------------------------------------------------------------
-//Filter by author and genre
 
 
-//here I am just tagle to open the text space in my filter
-function handleToggleAuthorDisplay(){
-    setDisplayAuthor(!displayAuthor)
-}
-
-function handleToggleGenreDisplay(){
-    setDisplayGenre(!displayGenre)
-}
-
-//I want to make my text space appear when I toggle the option. For it I will make a ternary.
-//AM I displaying the author? if i am .... I want tthe text space
-
-let displayAuthorSearchText = displayAuthor ? <input className='searchAuthor'
-type='text'
-/> : null
-
-let displayGenreSearchText = displayGenre ? <input className='searchGenre'
-type='text'
-/> : null
 
 
 
@@ -73,6 +104,7 @@ type='text'
                     />
                     <div className='authorToDisplay'>Author:</div>
                     {displayAuthorSearchText}
+
                     <input
                         
                         type='radio'
