@@ -23,6 +23,9 @@
     background: url('./Images/searchSize25.png') right no-repeat;
     transition: 1s;
     color: transparent;
+    &::placeholder{
+        color: transparent;
+    }
 &:focus{//make the searchBar grow
     width: 250px;
     cursor: text;
@@ -34,5 +37,4 @@
         transition: 1s;
     }
 }
-
 }

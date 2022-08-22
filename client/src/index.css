@@ -136,6 +136,15 @@
   transition: 1s;
   color: transparent;
 }
+.searchBar::-moz-placeholder {
+  color: transparent;
+}
+.searchBar:-ms-input-placeholder {
+  color: transparent;
+}
+.searchBar::placeholder {
+  color: transparent;
+}
 .searchBar:focus {
   width: 250px;
   cursor: text;

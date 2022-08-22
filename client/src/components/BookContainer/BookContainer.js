@@ -2,11 +2,11 @@ import BookCard from "../BookCard/BookCard"
 
 
 
-export default function BookContainer({ testData }) {
-    if (!testData.items) {
+export default function BookContainer({ books }) {
+    if (!books.items) {
         return null
     }
-     let booksToDisplay = testData.items.map(book => {
+     let booksToDisplay = books.items.map(book => {
         return (
             <BookCard
             key= {book.id}
@@ -15,7 +15,6 @@ export default function BookContainer({ testData }) {
         )
      })
    
-
     return (
 
         <div className='bookContainer' > 

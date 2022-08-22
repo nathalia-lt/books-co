@@ -12,6 +12,7 @@ function App() {
   let [userShelves, setUserShelves] = useState([])
 
 
+  //get user info every single time the webpage is load and alsov conecting frontEnd with backEnd
   useEffect(() => {
     let meRequest = axios.get('/me')
     let shelvesRequest = axios.get('/usershelves')
@@ -38,11 +39,16 @@ let [searchResults, setSearchResults] = useState({})
             testData={[]}
             user={user}
             setUser={setUser}
+            userShelves={userShelves}
+            setUserShelves={setUserShelves}
           />
         }
         />
         <Route path='/book/:id' element={
           <BookPage
+          userShelves={userShelves}
+          setUserShelves={setUserShelves}
+          user={user}
           />
         }
         />

@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useState } from "react";
 
 
-export default function Home( {testData,user,setUser} ){
+export default function Home( {user,setUser, userShelves, setUserShelves} ){
 
     const handleLogIn = () => {
         axios.post('/login', {
@@ -32,10 +32,11 @@ export default function Home( {testData,user,setUser} ){
             <button onClick={handleShowMe}>Show Me</button>
         </>
     )
+    let currentlyBooks = userShelves[0].books
     return(
         <div>
             <BookContainer
-            testData={testData}
+            books={currentlyBooks}
             />
             <button onClick={handleLogOut}>Log Out</button>
         </div>

@@ -157,7 +157,7 @@ export default function SearchPage({ searchResults, setSearchResults }) {
                 </div>
             </div>
             <BookContainer
-                testData={searchResults}
+                books={searchResults}
             />
 
         </div>

@@ -6,7 +6,7 @@ import FeaturedBook from "../FeaturedBook/FeaturedBook"
 import BookReview from "../BookReview/BookReview"
 
 
-export default function BookPage() {
+export default function BookPage( {userShelves, setUserShelves, user} ) {
     let [hoverStars, setHoverStars] = useState(0)
     let [clickedStars, setClickedStars] = useState(0)
 
