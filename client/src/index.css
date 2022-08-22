@@ -60,7 +60,9 @@
 .reviewContainer {
   background-color: lightblue;
   width: 100%;
-  height: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -309,6 +311,8 @@
 }
 
 .userReviewCard {
+  background-color: salmon;
+  margin-bottom: 0.5%;
   padding: 10px;
   width: 97.5%;
 }

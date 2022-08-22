@@ -93,29 +93,9 @@ function starClass(num) {
 }
 
 //------------------------------------------------------------------
-//------------------------------------------------------------------
-//mock data to pass into bookReview component
+//-----------------------------------------------------------------
 
-let demoReviews = [
-    {
-        'username': 'test',
-        'rating': 5,
-        'text': 'Prudence profonde coupoles prennent roc pas precieux pourquoi. Ennemies massacre triomphe les cavernes des six toi. Je or devant blason palais et epouse sa atroce. Se on rendre ah sortit annees jusque jambes voyage. Chantant traverse soutenir net campagne sur remettre. Demeurons cet six art toutefois resterait les. Firmament sortaient net echauffer aux reprendre preferait eux.',
-        'date': 'Jan 10, 2022'
-    },
-    {
-        'username': 'test-2',
-        'rating': 1,
-        'text': 'Prudence profonde coupoles prennent roc pas precieux pourquoi. Ennemies massacre triomphe les cavernes des six toi. Je or devant blason palais et epouse sa atroce. Se on rendre ah sortit annees jusque jambes voyage. Chantant traverse soutenir net campagne sur remettre. Demeurons cet six art toutefois resterait les. Firmament sortaient net echauffer aux reprendre preferait eux.',
-        'date': 'Jan 10, 2022'
-    },
-    {
-        'username': 'test-3',
-        'rating': 2,
-        'text': 'Prudence profonde coupoles prennent roc pas precieux pourquoi. Ennemies massacre triomphe les cavernes des six toi. Je or devant blason palais et epouse sa atroce. Se on rendre ah sortit annees jusque jambes voyage. Chantant traverse soutenir net campagne sur remettre. Demeurons cet six art toutefois resterait les. Firmament sortaient net echauffer aux reprendre preferait eux.',
-        'date': 'Jan 10, 2022'
-    }
-]
+
 
 let reviewsToDisplay = bookReviews.map(review => {
     return(
@@ -172,6 +152,8 @@ let ratingNum = pageData.volumeInfo.ratingsCount
                             />
                             <button onClick={handleSubmit} disabled={!clickedStars} >Submit</button> 
                         </form>
+                        <hr></hr>
+                        <h3>All Reviews:</h3>
                         <div className="userReviews" >
                             {reviewsToDisplay}
                         </div>
