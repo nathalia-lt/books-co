@@ -17,13 +17,19 @@ export default function BookPage( {userShelves, setUserShelves, user} ) {
     let id = params.id
 
     let [pageData, setPageData] = useState({})
+    let [bookReviews, setBookReviews] = useState([])
 
-    let url = "https://www.googleapis.com/books/v1/volumes/" + id + '?&key=' + key //I took this link API
-
-
+    
+    
     useEffect(() => {
-        axios.get(url)
-            .then(r => setPageData(r.data))
+        let url = "https://www.googleapis.com/books/v1/volumes/" + id + '?&key=' + key //I took this link API
+        let bookDataRequest = axios.get(url)
+        let bookReviewRequest = axios.post('/allbookreviews', {'book_id':id})
+        axios.all([bookDataRequest, bookReviewRequest])
+        .then(axios.spread((res1, res2) => {
+            setPageData(res1.data)
+            setBookReviews(res2.data)
+        }))
     }, [])
 
     if (!pageData.volumeInfo) { //if there is no key of volum info on pagedata return null

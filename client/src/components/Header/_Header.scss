@@ -1,20 +1,20 @@
-@use '../../styles' as s;
+@use '../../styles'as s;
 
 
 
-.header{
+.header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 3%;
 }
 
-.title{
+.title {
     cursor: pointer;
     font-size: 30px;
 }
 
-.searchBar{
+.searchBar {
     align-self: right;
     font-size: 18px;
     width: 80px;
@@ -23,18 +23,22 @@
     background: url('./Images/searchSize25.png') right no-repeat;
     transition: 1s;
     color: transparent;
-    &::placeholder{
+
+    &::placeholder {
         color: transparent;
     }
-&:focus{//make the searchBar grow
-    width: 250px;
-    cursor: text;
-    transition: 1s;
-    background-color: rgba(186, 185, 185, 0.245);
-    color: black;
-    &::placeholder{
-        color: rgba(128, 128, 128, 0.6);
+
+    &:focus {
+        //make the searchBar grow
+        width: 250px;
+        cursor: text;
         transition: 1s;
+        background-color: rgba(186, 185, 185, 0.245);
+        color: black;
+
+        &::placeholder {
+            color: rgba(128, 128, 128, 0.6);
+            transition: 1s;
+        }
     }
-}
 }
