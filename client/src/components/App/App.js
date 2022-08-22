@@ -9,13 +9,16 @@ import SearchPage from '../SearchPage/SearchPage'
 
 function App() {
   let [user,setUser] = useState({})
+  let [userShelves, setUserShelves] = useState([])
 
 
   useEffect(() => {
     let meRequest = axios.get('/me')
-    axios.all([meRequest])
-      .then(axios.spread((res1) => {
+    let shelvesRequest = axios.get('/usershelves')
+    axios.all([meRequest, shelvesRequest])
+      .then(axios.spread((res1, res2) => {
         setUser(res1.data)
+        setUserShelves(res2.data)
       }))
   }, [])
 
