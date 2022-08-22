@@ -5,19 +5,17 @@
 .header{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-top: 3%;
 }
 
 .title{
     cursor: pointer;
     font-size: 30px;
-    margin-left: 35%;
 }
 
 .searchBar{
     align-self: right;
-    margin-left: 39vw;
     font-size: 18px;
     width: 80px;
     border: none;
@@ -27,7 +25,6 @@
     color: transparent;
 &:focus{//make the searchBar grow
     width: 250px;
-    margin-left: 27vw;
     cursor: text;
     transition: 1s;
     background-color: rgba(186, 185, 185, 0.245);

@@ -46,6 +46,13 @@ let [searchResults, setSearchResults] = useState({})
           />
         }
         />
+        <Route path='/search/:searchTerm/:authorSearchTerm' element={ //Here I am adding another / in the adress, than go to bigSearchsubmit and add to navigate
+          <SearchPage
+          searchResults={searchResults}
+          setSearchResults={setSearchResults}
+          />
+        }
+        />
       </Routes>
     </div>
   );
