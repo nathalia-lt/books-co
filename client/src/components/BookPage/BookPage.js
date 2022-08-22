@@ -19,6 +19,29 @@ export default function BookPage( {userShelves, setUserShelves, user} ) {
     let [pageData, setPageData] = useState({})
     let [bookReviews, setBookReviews] = useState([])
 
+    let [reviewText, setReviewText] = useState('')
+    
+    function handleReviewTextChange(event){
+        setReviewText(event.target.value)
+    }
+
+    function handleSubmit(e){
+        e.preventDefault()
+        let date = new Date()
+        let review = {
+            'book_id': id,
+            'user_id': user.id,
+            'rating': clickedStars,
+            'text': reviewText,
+            'date': date.toDateString().slice(4,)
+        }
+        console.log(review)
+        axios.post('/reviews', review)
+        .then(r => {
+            let updatedBookReviews = [...bookReviews, r.data]
+            setBookReviews(updatedBookReviews)
+        })
+    }
     
     
     useEffect(() => {
@@ -64,10 +87,6 @@ export default function BookPage( {userShelves, setUserShelves, user} ) {
     function displayStars(num) {
         return clickedStars >= num || hoverStars >= num ? '★' : '☆'
     }
-
-function handleSubmit(e){
-    e.preventDefault()
-}
 
 function starClass(num) {
     return clickedStars >= num || hoverStars >= num ? 'star active' : 'star' 
@@ -146,10 +165,12 @@ let ratingNum = pageData.volumeInfo.ratingsCount
                         </div>
                         <form className='reviewForm' >
                             <input
+                                value={reviewText}
+                                onChange={handleReviewTextChange}
                                 type='text'
                                 
                             />
-                            <button onClick={handleSubmit} >Submit</button>
+                            <button onClick={handleSubmit} disabled={!clickedStars} >Submit</button> 
                         </form>
                         <div className="userReviews" >
                             {demoReviewsToDisplay}
