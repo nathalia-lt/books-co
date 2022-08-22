@@ -117,10 +117,10 @@ let demoReviews = [
     }
 ]
 
-let demoReviewsToDisplay = demoReviews.map(review => {
+let reviewsToDisplay = bookReviews.map(review => {
     return(
         <BookReview
-        key={review.username}
+        key={review.id}
         review={review}
         />
         )
@@ -173,7 +173,7 @@ let ratingNum = pageData.volumeInfo.ratingsCount
                             <button onClick={handleSubmit} disabled={!clickedStars} >Submit</button> 
                         </form>
                         <div className="userReviews" >
-                            {demoReviewsToDisplay}
+                            {reviewsToDisplay}
                         </div>
                     </div>
                 </div>
