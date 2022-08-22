@@ -8,6 +8,7 @@ import BookPage from '../BookPage/BookPage'
 import SearchPage from '../SearchPage/SearchPage'
 
 function App() {
+  let [user,setUser] = useState({})
 
   let booksUrl = 'https://www.googleapis.com/books/v1/volumes?q=thesimplewild&maxResults=30&printType=books&key=' + key
 
@@ -31,6 +32,8 @@ let [searchResults, setSearchResults] = useState({})
         <Route path='/*' element={
           <Home
             testData={testData}
+            user={user}
+            setUser={setUser}
           />
         }
         />
