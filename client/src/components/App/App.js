@@ -10,12 +10,13 @@ import SearchPage from '../SearchPage/SearchPage'
 function App() {
   let [user,setUser] = useState({})
 
-  let booksUrl = 'https://www.googleapis.com/books/v1/volumes?q=thesimplewild&maxResults=30&printType=books&key=' + key
 
-  let [testData, setTestData] = useState([])
   useEffect(() => {
-    axios.get(booksUrl)
-      .then(r => setTestData(r.data))
+    let meRequest = axios.get('/me')
+    axios.all([meRequest])
+      .then(axios.spread((res1) => {
+        setUser(res1.data)
+      }))
   }, [])
 
 let [searchResults, setSearchResults] = useState({})
@@ -31,7 +32,7 @@ let [searchResults, setSearchResults] = useState({})
       <Routes>
         <Route path='/*' element={
           <Home
-            testData={testData}
+            testData={[]}
             user={user}
             setUser={setUser}
           />

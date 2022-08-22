@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useState } from "react";
 
 
-export default function Home( {testData} ){
+export default function Home( {testData,user,setUser} ){
 
     const handleLogIn = () => {
         axios.post('/login', {
@@ -12,6 +12,12 @@ export default function Home( {testData} ){
             "password": "12345"
         })
             .then(r => setUser(r.data))
+
+    }
+
+    const handleLogOut = () => {
+        axios.delete('/logout')
+            .then(r => setUser({}))
 
     }
 
@@ -31,6 +37,7 @@ export default function Home( {testData} ){
             <BookContainer
             testData={testData}
             />
+            <button onClick={handleLogOut}>Log Out</button>
         </div>
     )
 }
