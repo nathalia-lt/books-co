@@ -31,6 +31,8 @@ let [searchResults, setSearchResults] = useState({})
     <div>
       <Header
         setSearchResults={setSearchResults}
+        user={user}
+        setUser={setUser}
       />
       <hr></hr>
       <Routes>

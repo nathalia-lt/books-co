@@ -43,15 +43,58 @@
     }
 }
 
-.group{
+.group {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 65%;
     background-color: orange;
-    &.end{
+
+    &.end {
         justify-content: flex-end;
         background-color: aqua;
         width: 50%;
     }
 }
+
+
+.profile-menu {
+    // border-radius: s.$radius;
+    border-radius: 2px;
+    position: absolute;
+    text-align: right;
+    top: 7.5%;
+    left: 92%;
+    background-color: palegreen;
+    z-index: 1;
+    animation: dropDown 0.45s ease-in-out forwards;
+    transform-origin: top center;
+    color: s.$text;
+    border: 1px solid black;
+}
+
+.menu-option {
+    padding: 15px;
+    padding-right: 10px;
+    padding-left: 25px;
+    font-size: 17px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.715);
+}
+
+@keyframes dropDown {
+    0% {
+        // transform: scaleY(0);
+        opacity: 0;
+        background-color: transparent;
+    }
+
+    100% {
+        // transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+.profile {
+    cursor: pointer;
+    margin-left: 5%;
+  }

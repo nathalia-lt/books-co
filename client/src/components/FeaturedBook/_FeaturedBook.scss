@@ -102,7 +102,7 @@
     }
 
     select {
-        background-color: peachpuff;
+        background-color: s.$primary;
         color: black;
         border: none;
         margin-right: .5%;
@@ -113,7 +113,7 @@
     }
 
     button {
-        background-color: peachpuff;
+        background-color: s.$primary;
         color: black;
         border: none;
         font-size: 15px;
@@ -145,7 +145,7 @@
     }
 
     input {
-        background-color: peachpuff;
+        background-color: s.$primary;
         border: none;
         color: black;
         margin-right: 1%;
