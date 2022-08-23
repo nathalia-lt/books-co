@@ -53,6 +53,10 @@ export default function BookPage( {userShelves, setUserShelves, user} ) {
         if (clickedEdit){
             axios.post('/removereview', {'id': selectedReview})
         }
+            setClickedStars(0) 
+            setReviewText('')
+            setSelectedReview('')
+            setClickedEdit(false)
     }
     
     
@@ -79,7 +83,7 @@ export default function BookPage( {userShelves, setUserShelves, user} ) {
     //☆★
 
     function handleClickStar(num) {
-        if (hoverStars === num && clickedStars) {
+        if (clickedStars === num) {
             setClickedStars(0)
             setHoverStars(num)
         } else {
