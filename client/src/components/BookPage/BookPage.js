@@ -29,8 +29,6 @@ export default function BookPage( {userShelves, setUserShelves, user} ) {
 
 
 
-
-
     function handleReviewTextChange(event){
         setReviewText(event.target.value)
     }
