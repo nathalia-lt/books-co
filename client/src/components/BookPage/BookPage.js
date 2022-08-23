@@ -6,7 +6,7 @@ import FeaturedBook from "../FeaturedBook/FeaturedBook"
 import BookReview from "../BookReview/BookReview"
 
 
-export default function BookPage( {userShelves, setUserShelves, user} ) {
+export default function BookPage({ userShelves, setUserShelves, user }) {
     let [hoverStars, setHoverStars] = useState(0)
     let [clickedStars, setClickedStars] = useState(0)
 
@@ -20,20 +20,32 @@ export default function BookPage( {userShelves, setUserShelves, user} ) {
     let [bookReviews, setBookReviews] = useState([])
 
     let [reviewText, setReviewText] = useState('')
-    
+
     //------------------------------------------------------------------
-    
+
     let [clickedEdit, setClickedEdit] = useState(false)
     let [selectedReview, setSelectedReview] = useState('')
 
 
+    function truncateDecimals(num, digits) {
+        let numS = num.toString(),
+            decPos = numS.indexOf('.'),
+            substrLength = decPos == -1 ? numS.length : 1 + decPos + digits,
+            trimmedResult = numS.substr(0, substrLength),
+            finalResult = isNaN(trimmedResult) ? 0 : trimmedResult;
+
+        return parseFloat(finalResult);
+    }
 
 
-    function handleReviewTextChange(event){
+
+
+
+    function handleReviewTextChange(event) {
         setReviewText(event.target.value)
     }
 
-    function handleSubmit(e){
+    function handleSubmit(e) {
         e.preventDefault()
         let date = new Date()
         let review = {
@@ -44,29 +56,29 @@ export default function BookPage( {userShelves, setUserShelves, user} ) {
             'date': date.toDateString().slice(4,)
         }
         axios.post('/reviews', review)
-        .then(r => {
-            let updatedBookReviews = [...bookReviews, r.data]
-            setBookReviews(updatedBookReviews)
-        })
-        if (clickedEdit){
-            axios.post('/removereview', {'id': selectedReview})
+            .then(r => {
+                let updatedBookReviews = [...bookReviews, r.data]
+                setBookReviews(updatedBookReviews)
+            })
+        if (clickedEdit) {
+            axios.post('/removereview', { 'id': selectedReview })
         }
-            setClickedStars(0) 
-            setReviewText('')
-            setSelectedReview('')
-            setClickedEdit(false)
+        setClickedStars(0)
+        setReviewText('')
+        setSelectedReview('')
+        setClickedEdit(false)
     }
-    
-    
+
+
     useEffect(() => {
         let url = "https://www.googleapis.com/books/v1/volumes/" + id + '?&key=' + key //I took this link API
         let bookDataRequest = axios.get(url)
-        let bookReviewRequest = axios.post('/allbookreviews', {'book_id':id})
+        let bookReviewRequest = axios.post('/allbookreviews', { 'book_id': id })
         axios.all([bookDataRequest, bookReviewRequest])
-        .then(axios.spread((res1, res2) => {
-            setPageData(res1.data)
-            setBookReviews(res2.data)
-        }))
+            .then(axios.spread((res1, res2) => {
+                setPageData(res1.data)
+                setBookReviews(res2.data)
+            }))
     }, [])
 
     if (!pageData.volumeInfo) { //if there is no key of volum info on pagedata return null
@@ -102,55 +114,58 @@ export default function BookPage( {userShelves, setUserShelves, user} ) {
         return clickedStars >= num || hoverStars >= num ? '★' : '☆'
     }
 
-function starClass(num) {
-    return clickedStars >= num || hoverStars >= num ? 'star active' : 'star' 
-}
-
-
-//-----------------------------------------------------------------
-
-
-// I use sort here because I want the latest reviews to appear first.
-let reviewsToDisplay = bookReviews.sort((a,b) => b.id - a.id).map(review => {
-    function handleClickEdit(){
-        if (clickedEdit && review.id === selectedReview ){
-            setClickedStars(0) 
-            setReviewText('')
-            setSelectedReview('')
-            setClickedEdit(false)
-        }else {
-            setClickedStars(review.rating)
-            setReviewText(review.text)
-            setSelectedReview(review.id)
-            setClickedEdit(true)
-        }
+    function starClass(num) {
+        return clickedStars >= num || hoverStars >= num ? 'star active' : 'star'
     }
-    //variable inside the function because it has to be for each review
-    let madeByUser = review.user.id === user.id
-    let inEditMode = selectedReview === review.id 
 
-    return(
-        <BookReview
-        key={review.id}
-        review={review}
-        user={user}
-        madeByUser={madeByUser}
-        bookReviews={bookReviews}
-        setBookReviews={setBookReviews}
-        handleClickEdit={handleClickEdit}
-        inEditMode={inEditMode}
-        />
+
+    //-----------------------------------------------------------------
+
+
+    // I use sort here because I want the latest reviews to appear first.
+    let reviewsToDisplay = bookReviews.sort((a, b) => b.id - a.id).map(review => {
+        function handleClickEdit() {
+            if (clickedEdit && review.id === selectedReview) {
+                setClickedStars(0)
+                setReviewText('')
+                setSelectedReview('')
+                setClickedEdit(false)
+            } else {
+                setClickedStars(review.rating)
+                setReviewText(review.text)
+                setSelectedReview(review.id)
+                setClickedEdit(true)
+            }
+        }
+        //variable inside the function because it has to be for each review
+        let madeByUser = review.user.id === user.id
+        let inEditMode = selectedReview === review.id
+
+        return (
+            <BookReview
+                key={review.id}
+                review={review}
+                user={user}
+                madeByUser={madeByUser}
+                bookReviews={bookReviews}
+                setBookReviews={setBookReviews}
+                handleClickEdit={handleClickEdit}
+                inEditMode={inEditMode}
+            />
         )
     })
-    
-    
+
+
     //------------------------------------------------------------------
-//I take the rating from google API
+    //I take the rating from google API
 
-let avgRating = pageData.volumeInfo.averageRating
-let ratingNum = pageData.volumeInfo.ratingsCount
+    let avgRating = pageData.volumeInfo.averageRating ? pageData.volumeInfo.averageRating : 0
+    let numRatings = pageData.volumeInfo.ratingsCount ? pageData.volumeInfo.ratingsCount : 0
 
-
+    let bookReviewsRating = bookReviews.reduce((tot, review) => tot + review.rating, 0) / bookReviews.length //average rating in the backEnd
+    let calculateBookRating = bookReviews.length ? truncateDecimals(((avgRating * numRatings) + (bookReviewsRating * bookReviews.length)) / (numRatings + bookReviews.length), 2) : avgRating
+    // calculatebookingRating, calculates the average rating in the backEnd and API google ratings together
+    let totalNumberOfBooksreviews = numRatings + bookReviews.length
 
 
     return (
@@ -162,8 +177,8 @@ let ratingNum = pageData.volumeInfo.ratingsCount
                 />
                 <div className='reviewContainer' >
                     <div className='reviewInfo'>
-                        <h2>Average Rating: {avgRating} ⭐️</h2>
-                        <h4> Number of Ratings: {ratingNum} </h4>
+                        <h2>Average Rating: {calculateBookRating} ⭐️</h2>
+                        <h4> Number of Ratings: {totalNumberOfBooksreviews} </h4>
                         <hr></hr>
                         <div className="newReviewTitle">
                             <h3>Write a Review: </h3>
@@ -185,9 +200,9 @@ let ratingNum = pageData.volumeInfo.ratingsCount
                                 value={reviewText}
                                 onChange={handleReviewTextChange}
                                 type='text'
-                                
+
                             />
-                            <button onClick={handleSubmit} disabled={!clickedStars} >Submit</button> 
+                            <button onClick={handleSubmit} disabled={!clickedStars} >Submit</button>
                         </form>
                         <hr></hr>
                         <h3>All Reviews:</h3>
