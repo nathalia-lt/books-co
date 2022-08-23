@@ -1,11 +1,9 @@
 import { GithubSelector, SlackCounter } from '@charkour/react-reactions';
 import { useState } from 'react';
 
-export default function BookReview( {review} ){
+export default function BookReview( {review, user, madeByUser, bookReviews, setBookReviews, handleClickEdit, inEditMode} ){
 
 let [reactions, setReactions] = useState([])
-
-
 
 let [displayEmojis, setDisplayEmojis] = useState(false)
 
@@ -39,7 +37,10 @@ function removeSelectReaction(e) {
         <div className='userReviewCard' >
             <hr></hr>
             <div className='userReviewId' >
-                <div className='userReviewTitle' > <span> {review.user.username}</span> - <span>{review.rating} ★ </span>  </div>
+                <div className='userReviewTitle' > <span> {review.user.username}</span> - <span>{review.rating} ★ </span> 
+                <button onClick={handleClickEdit} >{inEditMode ? 'Stop Editing' : 'Edit' }</button> 
+                <button>Delete</button>
+                </div>
                 <div className='userReviewDate'> {review.date}</div>
             </div>
             <div className='userReviewText'> {review.text} </div>

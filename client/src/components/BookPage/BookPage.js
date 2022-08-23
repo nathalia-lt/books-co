@@ -21,6 +21,16 @@ export default function BookPage( {userShelves, setUserShelves, user} ) {
 
     let [reviewText, setReviewText] = useState('')
     
+    //------------------------------------------------------------------
+    
+    let [clickedEdit, setClickedEdit] = useState(false)
+    let [selectedReview, setSelectedReview] = useState('')
+
+
+
+
+
+
     function handleReviewTextChange(event){
         setReviewText(event.target.value)
     }
@@ -35,12 +45,14 @@ export default function BookPage( {userShelves, setUserShelves, user} ) {
             'text': reviewText,
             'date': date.toDateString().slice(4,)
         }
-        console.log(review)
         axios.post('/reviews', review)
         .then(r => {
             let updatedBookReviews = [...bookReviews, r.data]
             setBookReviews(updatedBookReviews)
         })
+        if (clickedEdit){
+            axios.post('/removereview', {'id': selectedReview})
+        }
     }
     
     
@@ -92,16 +104,39 @@ function starClass(num) {
     return clickedStars >= num || hoverStars >= num ? 'star active' : 'star' 
 }
 
-//------------------------------------------------------------------
+
 //-----------------------------------------------------------------
 
 
+// I use sort here because I want the latest reviews to appear first.
+let reviewsToDisplay = bookReviews.sort((a,b) => b.id - a.id).map(review => {
+    function handleClickEdit(){
+        if (clickedEdit && review.id === selectedReview ){
+            setClickedStars(0) 
+            setReviewText('')
+            setSelectedReview('')
+            setClickedEdit(false)
+        }else {
+            setClickedStars(review.rating)
+            setReviewText(review.text)
+            setSelectedReview(review.id)
+            setClickedEdit(true)
+        }
+    }
+    //variable inside the function because it has to be for each review
+    let madeByUser = review.user.id === user.id
+    let inEditMode = selectedReview === review.id 
 
-let reviewsToDisplay = bookReviews.map(review => {
     return(
         <BookReview
         key={review.id}
         review={review}
+        user={user}
+        madeByUser={madeByUser}
+        bookReviews={bookReviews}
+        setBookReviews={setBookReviews}
+        handleClickEdit={handleClickEdit}
+        inEditMode={inEditMode}
         />
         )
     })
