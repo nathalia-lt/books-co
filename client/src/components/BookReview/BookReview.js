@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export default function BookReview({ review, user, madeByUser, bookReviews, setBookReviews, handleClickEdit, inEditMode }) {
 
-    let [reactions, setReactions] = useState([])
+    let [reactions, setReactions] = useState(review.reactions)
 
     let [displayEmojis, setDisplayEmojis] = useState(false)
 
@@ -51,19 +51,31 @@ export default function BookReview({ review, user, madeByUser, bookReviews, setB
     //function to avoid re-reaction more than once
 
     function handleSelectReaction(e) {
-        let includesReact = reactions.map(reaction => (reaction.emoji === e) && (reaction.by === 'Maria')).includes(true)
+        let includesReact = reactions.map(reaction => (reaction.emoji === e) && (reaction.by === user.username)).includes(true)
         if (!includesReact) {
             let reaction = {
                 emoji: e,
-                by: 'Maria'
+                user_id: user.id, 
+                review_id: review.id
             }
-            setReactions([...reactions, reaction])
+            axios.post('/reactions', reaction)
+            .then(r => {
+                setReactions([...reactions, r.data])
+            })
         }
     }
 
-    function removeSelectReaction(e) {
-        let filteredCounters = reactions.filter(reaction => (reaction.emoji !== e) && (reaction.by === 'Maria'))
-        setReactions(filteredCounters)
+    function handleRemoveReaction(e) {
+        let reactionToDelete = {
+            emoji: e,
+                user_id: user.id, 
+                review_id: review.id
+        }
+        axios.post('/removereaction', reactionToDelete)
+        .then(r => {
+            let filteredCounters = reactions.filter(reaction => reaction.id !== r.data.id)
+            setReactions(filteredCounters)
+        })
     }
 
 
@@ -79,7 +91,7 @@ export default function BookReview({ review, user, madeByUser, bookReviews, setB
             <div className='userReviewText'> {review.text} </div>
             <div className='reactionCounter' >
                 <h5> Reactions: </h5>
-                <SlackCounter onAdd={handleClickAddEmoji} counters={reactions} onSelect={removeSelectReaction} />
+                <SlackCounter onAdd={handleClickAddEmoji} counters={reactions} onSelect={handleRemoveReaction} />
             </div>
             {displayEmojisSelector}
         </div>
