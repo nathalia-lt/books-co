@@ -96,6 +96,7 @@ export default function FeaturedBook( {book, user, setUser, userShelves, setUser
                         updatedShelves[selectedStatus] = r.data
                         setUserShelves(updatedShelves)
                     })
+                    alert('This book has been removed from your '+ shelf.name + ' shelf')
             } else {
 
                 let shelfUpdate = {
@@ -108,6 +109,7 @@ export default function FeaturedBook( {book, user, setUser, userShelves, setUser
                         updatedShelves[selectedStatus] = r.data
                         setUserShelves(updatedShelves)
                     })
+                    alert('This book has been added to your '+ shelf.name + ' shelf')
                 ids.splice(selectedStatus, 1)
                 for (let id of ids) {
                     let otherShelf = statusShelves[id]
@@ -149,6 +151,7 @@ export default function FeaturedBook( {book, user, setUser, userShelves, setUser
                         updatedShelves[shelfIndex] = r.data
                         setUserShelves(updatedShelves)
                     })
+                    alert('This book has been removed from your '+ shelf.name + ' shelf')
             } else {
                 let shelfUpdate = {
                     "shelf_id": shelf.id,
@@ -161,6 +164,7 @@ export default function FeaturedBook( {book, user, setUser, userShelves, setUser
                         setUserShelves(updatedShelves)
                         console.log(r.data)
                     })
+                    alert('This book has been added to your '+ shelf.name + ' shelf')
             }
         }
     }
@@ -181,6 +185,7 @@ export default function FeaturedBook( {book, user, setUser, userShelves, setUser
             })
         setDisplayNewShelfForm(false)
         setNewShelfName('')
+        alert('Your '+ newShelf.name + ' shelf has been created')
     }
 
     let statusShelves = userShelves.slice(0, 4)
@@ -226,8 +231,6 @@ export default function FeaturedBook( {book, user, setUser, userShelves, setUser
         </div>
         {newShelfForm}
     </div> : null
-
-
 
 
 
