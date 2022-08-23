@@ -204,7 +204,6 @@
 .bookPageCardInformation {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 5%;
 }
 
@@ -212,10 +211,6 @@
   height: 240px;
   width: 170px;
   border-radius: 3%;
-}
-
-.imageWrap {
-  padding: 40%;
 }
 
 .bookPageTitle {
@@ -251,6 +246,76 @@
   padding-top: 0px;
   margin-top: -1px;
   margin-bottom: -1px;
+}
+
+.shelfRow {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin-top: 1%;
+  font-size: 18px;
+}
+.shelfRow div {
+  font-size: 16px;
+  margin-right: 1%;
+  font-weight: 600;
+  padding: 2.5px;
+  border-radius: 3.3333333333px;
+}
+.shelfRow select {
+  background-color: peachpuff;
+  color: black;
+  border: none;
+  margin-right: 0.5%;
+  font-size: 15px;
+  padding: 2.5px;
+  border-radius: 3.3333333333px;
+  cursor: pointer;
+}
+.shelfRow button {
+  background-color: peachpuff;
+  color: black;
+  border: none;
+  font-size: 15px;
+  padding: 3.5px 7.5px;
+  border-radius: 3.3333333333px;
+  cursor: pointer;
+}
+.shelfRow button:hover {
+  transform: scale(1.05);
+  background-color: paleturquoise;
+}
+.shelfRow button:active {
+  transform: scale(0.95);
+}
+.shelfRow button:disabled {
+  opacity: 0.15;
+}
+.shelfRow button:disabled:hover {
+  transform: scale(1);
+  cursor: default;
+}
+.shelfRow button:disabled:active {
+  transform: scale(1);
+}
+.shelfRow input {
+  background-color: peachpuff;
+  border: none;
+  color: black;
+  margin-right: 1%;
+  font-size: 15px;
+  padding: 2.5px;
+  border-radius: 3.3333333333px;
+}
+.shelfRow input:focus {
+  background-color: paleturquoise;
+}
+
+.featuredCardBottom {
+  background-color: palevioletred;
+  padding: 30px;
+  padding-top: 3px;
+  border-radius: 0px 0px 5px 0px;
 }
 
 .searchPageContainer {

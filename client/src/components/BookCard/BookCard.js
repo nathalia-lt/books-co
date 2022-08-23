@@ -8,7 +8,7 @@ export default function BookCard( {book} ){
 
     //algumas pesquisas nao mostram a capa. Para esconder isso:
 
-    let bookCover = book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ''
+    let bookCover = book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : 'https://www.lesprecepteurs.fr/wp-content/uploads/2017/03/no-image-found.jpg'
 
 
     //I need book cover, book title and author to display on the browser

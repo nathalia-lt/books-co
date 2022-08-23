@@ -6,7 +6,7 @@ import FeaturedBook from "../FeaturedBook/FeaturedBook"
 import BookReview from "../BookReview/BookReview"
 
 
-export default function BookPage({ userShelves, setUserShelves, user }) {
+export default function BookPage({ userShelves, setUserShelves, user, setUser}) {
     let [hoverStars, setHoverStars] = useState(0)
     let [clickedStars, setClickedStars] = useState(0)
 
@@ -174,6 +174,10 @@ export default function BookPage({ userShelves, setUserShelves, user }) {
             <div className='display' >
                 <FeaturedBook
                     book={pageData}
+                    user={user}
+                    setUser={setUser}
+                    userShelves={userShelves}
+                    setUserShelves={setUserShelves}
                 />
                 <div className='reviewContainer' >
                     <div className='reviewInfo'>

@@ -49,6 +49,7 @@ let [searchResults, setSearchResults] = useState({})
           userShelves={userShelves}
           setUserShelves={setUserShelves}
           user={user}
+          setUser={setUser}
           />
         }
         />
