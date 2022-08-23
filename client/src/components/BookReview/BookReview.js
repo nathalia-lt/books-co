@@ -27,6 +27,18 @@ export default function BookReview({ review, user, madeByUser, bookReviews, setB
         setClickedDelete(false)
     }
 
+//pq tem div abaixo e HTML e nao javaScript. Entao precisei colocar o {} no ternary function
+    let buttons = clickedDelete ? <div>
+        <div> Are you sure? </div>
+        <button onClick={handleClickDelete} >Cancel</button>
+        <button onClick={handleConfirmDelete} >Confirm</button>
+    </div> : <div>
+        <button onClick={handleClickEdit} >{inEditMode ? 'Stop Editing' : 'Edit'}</button>
+        {inEditMode ? null : <button onClick={handleClickDelete} >Delete</button>}
+    </div>
+    
+    let userButtons = madeByUser ? buttons : null
+
 
 
     function handleClickAddEmoji() {
@@ -60,15 +72,7 @@ export default function BookReview({ review, user, madeByUser, bookReviews, setB
             <hr></hr>
             <div className='userReviewId' >
                 <div className='userReviewTitle' > <span> {review.user.username}</span> - <span>{review.rating} ★ </span>
-                    {clickedDelete ? <div>
-                        <div> Are you sure? </div>
-                        <button onClick={handleClickDelete} >Cancel</button>
-                        <button onClick={handleConfirmDelete} >Confirm</button>
-                    </div> : <div>
-                        <button onClick={handleClickEdit} >{inEditMode ? 'Stop Editing' : 'Edit'}</button>
-                        <button onClick={handleClickDelete} >Delete</button>
-                    </div>
-                    }
+                    {userButtons}
                 </div>
                 <div className='userReviewDate'> {review.date}</div>
             </div>
