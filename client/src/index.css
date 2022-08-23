@@ -169,6 +169,19 @@
   transition: 1s;
 }
 
+.group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 65%;
+  background-color: orange;
+}
+.group.end {
+  justify-content: flex-end;
+  background-color: aqua;
+  width: 50%;
+}
+
 .bookPageCard {
   display: flex;
   flex-direction: row;

@@ -7,51 +7,56 @@ import { useNavigate } from "react-router-dom";
 
 
 
-export default function Header( {setSearchResults} ) {
+export default function Header({ setSearchResults }) {
     let navigate = useNavigate() //I use useNavigate to send me to a new page
 
     let [searchTerm, setSearchTerm] = useState('')
-    
-    let booksUrl = 'https://www.googleapis.com/books/v1/volumes?q='+searchTerm+'&maxResults=30&printType=books&key=' + key
 
-    function handleSearchChange(event){
+    let booksUrl = 'https://www.googleapis.com/books/v1/volumes?q=' + searchTerm + '&maxResults=30&printType=books&key=' + key
+
+    function handleSearchChange(event) {
         setSearchTerm(event.target.value)
     }
 
-    function handleSearchSubmit(e){
+    function handleSearchSubmit(e) {
         e.preventDefault()
         axios.get(booksUrl)
-        .then(r => {
-            if (r.data.items){
-                navigate('/search/'+ searchTerm)
-            }
-                
-        else{
-            alert('No results found')
-        }
-        })
+            .then(r => {
+                if (r.data.items) {
+                    navigate('/search/' + searchTerm)
+                }
+
+                else {
+                    alert('No results found')
+                }
+            })
     }
 
     //----------------------------------------
     //I will make a function for when I click on the title I am sent back to the home page
 
-    function handleHomeClick(){
+    function handleHomeClick() {
         navigate('/')
     }
 
     return (
         <div className='header'>
-            <div> Clubs </div>
-            <div onClick={handleHomeClick} className= 'title'> The Book House </div>
-            <form onSubmit={handleSearchSubmit} >
-                <input className='searchBar'
-                type= 'text'
-                value={searchTerm}
-                onChange={handleSearchChange}
-                placeholder= 'Search'
+            <div className="group" >
+                <div>About</div>
+                <div> Clubs </div>
+                <div onClick={handleHomeClick} className='title'> The Book House </div>
+            </div>
+            <div className="group end">
+                <form onSubmit={handleSearchSubmit} >
+                    <input className='searchBar'
+                        type='text'
+                        value={searchTerm}
+                        onChange={handleSearchChange}
+                        placeholder='Search'
 
-                />
+                    />
                 </form>
+            </div>
         </div>
     )
 }

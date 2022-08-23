@@ -42,3 +42,16 @@
         }
     }
 }
+
+.group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 65%;
+    background-color: orange;
+    &.end{
+        justify-content: flex-end;
+        background-color: aqua;
+        width: 50%;
+    }
+}
