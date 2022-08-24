@@ -54,6 +54,7 @@
         justify-content: flex-end;
         background-color: aqua;
         width: 50%;
+        margin-right: 2.5%;
     }
 }
 
@@ -64,7 +65,7 @@
     position: absolute;
     text-align: right;
     top: 7.5%;
-    left: 92%;
+    left: 89%;
     background-color: palegreen;
     z-index: 1;
     animation: dropDown 0.45s ease-in-out forwards;
@@ -97,4 +98,5 @@
 .profile {
     cursor: pointer;
     margin-left: 5%;
+    margin-right: -4.5%;
   }
