@@ -6,7 +6,7 @@ import FeaturedBook from "../FeaturedBook/FeaturedBook"
 import BookReview from "../BookReview/BookReview"
 
 
-export default function BookPage({ userShelves, setUserShelves, user, setUser}) {
+export default function BookPage({ userShelves, setUserShelves, user, setUser }) {
     let [hoverStars, setHoverStars] = useState(0)
     let [clickedStars, setClickedStars] = useState(0)
 
@@ -25,6 +25,9 @@ export default function BookPage({ userShelves, setUserShelves, user, setUser}) 
 
     let [clickedEdit, setClickedEdit] = useState(false)
     let [selectedReview, setSelectedReview] = useState('')
+
+    let bookClubs = user.clubusers ? user.clubusers.map(clubuser => clubuser.bookclub) : []
+
 
 
     function truncateDecimals(num, digits) {
@@ -167,10 +170,35 @@ export default function BookPage({ userShelves, setUserShelves, user, setUser}) 
     // calculatebookingRating, calculates the average rating in the backEnd and API google ratings together
     let totalNumberOfBooksreviews = numRatings + bookReviews.length
 
+    let bookClubsToDisplay = bookClubs.map(club => {
+        return (
+            <div className="clubCard">
+            <div className= 'clubRow' >
+                <div className='clubName' > {club.name} </div>
+                <div className='dropDown'> ▾ </div>
+            </div>
+            <li>Go to page </li>
+            <li>Add to my list </li>
+            </div>
+        )
+    })
+    console.log(bookClubs)
+
+
+
+
 
     return (
         <div className='mainContainer' >
-            <div className='sideBar'  > sidebar</div>
+            <div className='sideBar'  >
+                <div className='sidebarinfo'>
+                    <h2 className= 'bookClubsTitle'>{user.first_name}'s Book Clubs </h2>
+                    {bookClubsToDisplay}
+                </div>
+                
+
+            </div>
+
             <div className='display' >
                 <FeaturedBook
                     book={pageData}

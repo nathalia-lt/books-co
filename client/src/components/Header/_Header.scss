@@ -12,6 +12,7 @@
 .title {
     cursor: pointer;
     font-size: 30px;
+    margin-left: 3%;
 }
 
 .searchBar {
@@ -46,15 +47,24 @@
 .group {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    //justify-content: space-between;
     width: 65%;
     //background-color: orange;
-
+    align-items: flex-end;
     &.end {
         justify-content: flex-end;
         //background-color: aqua;
         width: 50%;
         margin-right: 2.5%;
+    }
+}
+
+.option{
+    cursor: pointer;
+
+    margin-right: 5%;
+    &:hover{
+        color: cadetblue;
     }
 }
 

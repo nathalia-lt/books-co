@@ -68,19 +68,13 @@ function handleClickProfile(){
             setClickedProfileMenu(false)
         }
     },5*1000)
-
 }
 
 function handleMenuHover(){
     setClickedProfileMenu(true)
     setHoverOnProfileMenu(true)
 }
-let [clock,setClock] = useState(new Date())
-useEffect(()=>{
-    setInterval(() => {
-        setClock(new Date())
-    },1*1000) 
-},[])
+
 
 function handleMouseOut(){//10 secs. afters 10 secs are up it is going to run wharever it is in the function
     setHoverOnProfileMenu(false)
@@ -111,10 +105,9 @@ let displayProfileMenu = clickedProfileMenu ? (
     return (
         <div className='header'>
             <div className="group" >
-                <div onClick={handleHomeClick} className='title'> The Book House </div>
-                <div>About</div>
-                <div> Clubs </div>
-                <div>{clock.toLocaleTimeString()}</div>
+                <div onClick={handleHomeClick} className='title option'> The Book House </div>
+                <div className= 'option'>About</div>
+                <div className= 'option' > Clubs </div>
             </div>
             <div className="group end">
                 <form onSubmit={handleSearchSubmit} >

@@ -116,6 +116,21 @@
   flex-direction: column;
 }
 
+.clubRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.dropDown {
+  margin-left: 3%;
+  font-size: 20px;
+}
+
+.bookClubsTitle {
+  margin-top: 15%;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -126,6 +141,7 @@
 .title {
   cursor: pointer;
   font-size: 30px;
+  margin-left: 3%;
 }
 
 .searchBar {
@@ -172,13 +188,21 @@
 .group {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   width: 65%;
+  align-items: flex-end;
 }
 .group.end {
   justify-content: flex-end;
   width: 50%;
   margin-right: 2.5%;
+}
+
+.option {
+  cursor: pointer;
+  margin-right: 5%;
+}
+.option:hover {
+  color: cadetblue;
 }
 
 .profile-menu {
