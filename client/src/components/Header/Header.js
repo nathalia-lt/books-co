@@ -1,5 +1,5 @@
 import { Axios } from "axios"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import key from "../../key"
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
@@ -11,6 +11,8 @@ export default function Header({ setSearchResults, user, setUser }) {
     let [searchTerm, setSearchTerm] = useState('')
 
     let booksUrl = 'https://www.googleapis.com/books/v1/volumes?q=' + searchTerm + '&maxResults=30&printType=books&key=' + key
+
+    let [hoverOnProfileMenu, setHoverOnProfileMenu] = useState(true)
 
     function handleSearchChange(event) {
         setSearchTerm(event.target.value)
@@ -43,19 +45,51 @@ export default function Header({ setSearchResults, user, setUser }) {
 
 let [clickedProfileMenu, setClickedProfileMenu] = useState(false)
 
+//if you hover over the menu it does not dissaper if you does not it stays.
+// set it changes the value
+//if I want to check the value I look at none set ex: hoveronprofilemenu
+
+    
+    //if I only have one condicional that I am looking for I just need to set the th if and the else will be the opposite
+// function handleHoverMenu(){
+//     if (hoverOnProfileMenu === true){
+
+//     }else if (!hoverOnProfileMenu){
+//         handleMouseOut()
+//     }
+// }//if I only have one condicional that I am looking for I just need to set the th if and the else will be the opposite
+
+
 function handleClickProfile(){
     setClickedProfileMenu(!clickedProfileMenu)
+    setTimeout(() => {
+        //I did an annonymous function here, because I am only use this function here. I dont need to make it outside and take more space.
+        if (!hoverOnProfileMenu){
+            setClickedProfileMenu(false)
+        }
+    },5*1000)
+
 }
 
 function handleMenuHover(){
     setClickedProfileMenu(true)
+    setHoverOnProfileMenu(true)
 }
+let [clock,setClock] = useState(new Date())
+useEffect(()=>{
+    setInterval(() => {
+        setClock(new Date())
+    },1*1000) 
+},[])
 
-function handleMouseOut(){
+function handleMouseOut(){//10 secs. afters 10 secs are up it is going to run wharever it is in the function
+    setHoverOnProfileMenu(false)
     setTimeout(() => {
         setClickedProfileMenu(false)
-    },10*1000) //10 secs. afters 10 secs are up it is going to run wharever it is in the function
+    },5*1000) //10 secs. afters 10 secs are up it is going to run wharever it is in the function
 }
+
+
 
 const handleLogOut = () => {
     axios.delete('/logout')
@@ -80,6 +114,7 @@ let displayProfileMenu = clickedProfileMenu ? (
                 <div onClick={handleHomeClick} className='title'> The Book House </div>
                 <div>About</div>
                 <div> Clubs </div>
+                <div>{clock.toLocaleTimeString()}</div>
             </div>
             <div className="group end">
                 <form onSubmit={handleSearchSubmit} >

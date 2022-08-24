@@ -48,11 +48,11 @@
     flex-direction: row;
     justify-content: space-between;
     width: 65%;
-    background-color: orange;
+    //background-color: orange;
 
     &.end {
         justify-content: flex-end;
-        background-color: aqua;
+        //background-color: aqua;
         width: 50%;
         margin-right: 2.5%;
     }
@@ -72,6 +72,7 @@
     transform-origin: top center;
     color: s.$text;
     border: 1px solid black;
+    margin-top: 1.5%;
 }
 
 .menu-option {
@@ -99,4 +100,4 @@
     cursor: pointer;
     margin-left: 5%;
     margin-right: -4.5%;
-  }
+}

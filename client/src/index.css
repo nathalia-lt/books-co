@@ -174,11 +174,9 @@
   flex-direction: row;
   justify-content: space-between;
   width: 65%;
-  background-color: orange;
 }
 .group.end {
   justify-content: flex-end;
-  background-color: aqua;
   width: 50%;
   margin-right: 2.5%;
 }
@@ -196,6 +194,7 @@
   transform-origin: top center;
   color: black;
   border: 1px solid black;
+  margin-top: 1.5%;
 }
 
 .menu-option {
