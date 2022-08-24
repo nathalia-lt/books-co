@@ -497,6 +497,14 @@
   margin-right: 4px;
 }
 
+.dropDown {
+  cursor: pointer;
+}
+
+.clubName {
+  cursor: pointer;
+}
+
 body {
   background-color: rgb(250, 235, 215);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;

@@ -177,6 +177,8 @@ export default function BookPage({ userShelves, setUserShelves, user, setUser })
         return (
         <SideBarBookClub
         club={club}
+        book={pageData}
+        setUser={setUser}
         />
         )
     })
