@@ -74,7 +74,7 @@
     width: 36%;
     font-size: 16px;
     background-color: #66C4C7;
-    border-radius: 5px;
+    border-radius: s.$radius;
     padding: 20px;
 
     h3{
@@ -98,7 +98,7 @@
         font-weight: 600;
         // background-color: s.$dark-alt;
         padding: 2.5px;
-        border-radius: calc(5px/1.5);
+        border-radius: calc(s.$radius/1.5);
     }
 
     select {
@@ -108,7 +108,7 @@
         margin-right: .5%;
         font-size: 15px;
         padding: 2.5px;
-        border-radius: calc(5px/1.5);
+        border-radius: calc(s.$radius/1.5);
         cursor: pointer;
     }
 
@@ -118,7 +118,7 @@
         border: none;
         font-size: 15px;
         padding: 3.5px 7.5px;
-        border-radius: calc(5px/1.5);
+        border-radius: calc(s.$radius/1.5);
         cursor: pointer;
 
         &:hover {
@@ -151,7 +151,7 @@
         margin-right: 1%;
         font-size: 15px;
         padding: 2.5px;
-        border-radius: calc(5px/1.5);
+        border-radius: calc(s.$radius/1.5);
 
         &:focus {
             background-color: paleturquoise;
@@ -163,5 +163,5 @@
     background-color: palevioletred;
     padding: 30px;
     padding-top: 3px;
-    border-radius: 0px 0px 5px 0px;
+    border-radius: 0px 0px s.$radius 0px;
 }

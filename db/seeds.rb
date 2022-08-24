@@ -10,20 +10,28 @@ puts 'Creating Test Data'
 
 User.create!([
     {
-        username: 'test',
-    password:'12345',
+        username: 'demouser',
+        first_name: 'Demo',
+        last_name: 'User',
+        password:'12345',
 },
     {
-        username: 'demo',
-    password:'12345',
+        username: 'laluna',
+        first_name: 'oliver',
+        last_name: 'M',
+        password:'12345',
 },
     {
-        username: 'Corey',
-    password:'12345',
+        username: 'laurel',
+        first_name: 'Lauren',
+        last_name: 'L',
+        password:'12345',
 },
     {
-        username: 'Simone',
-    password:'12345',
+        username: 'simoneB',
+        first_name: 'simone',
+        last_name: 'B',
+        password:'12345',
 },
 ])
 
@@ -50,7 +58,7 @@ Review.create!([
     {
         user_id: 1,
         rating: 5,
-        text: 'Prudence profonde coupoles prennent roc pas precieux pourquoi. Ennemies massacre triomphe les cavernes des six toi. Je or devant blason palais et epouse sa atroce. Se on rendre ah sortit annees jusque jambes voyage. Chantant traverse soutenir net campagne sur remettre. Demeurons cet six art toutefois resterait les. Firmament sortaient net echauffer aux reprendre preferait eux.',
+        text: 'Cesserent qu instruite epluchant cependant escadrons le. Visages passent vit donjons nos hauteur feu les. Jeunes autour encore toi est tenons cet wagons sortes.',
         date: 'Jan 10, 2022',
         book_id: 'rWgrDwAAQBAJ'
     },
@@ -58,21 +66,21 @@ Review.create!([
         user_id: 2,
         rating: 5,
         text: 'Prudence profonde coupoles prennent roc pas precieux pourquoi. Ennemies massacre triomphe les cavernes des six toi. Je or devant blason palais et epouse sa atroce. Se on rendre ah sortit annees jusque jambes voyage. Chantant traverse soutenir net campagne sur remettre. Demeurons cet six art toutefois resterait les. Firmament sortaient net echauffer aux reprendre preferait eux.',
-        date: 'Jan 10, 2022',
+        date: 'Jan 11, 2022',
         book_id: 'rWgrDwAAQBAJ'
     },
     {
         user_id: 3,
         rating: 5,
-        text: 'Prudence profonde coupoles prennent roc pas precieux pourquoi. Ennemies massacre triomphe les cavernes des six toi. Je or devant blason palais et epouse sa atroce. Se on rendre ah sortit annees jusque jambes voyage. Chantant traverse soutenir net campagne sur remettre. Demeurons cet six art toutefois resterait les. Firmament sortaient net echauffer aux reprendre preferait eux.',
-        date: 'Jan 10, 2022',
+        text: 'Linge selon court ans toi sabre heros. Connut toi mirent art ton trouve enleve hideur eux balaye. Cornette or coussins recupera allaient viennent heureuse as. Obtenir promene ils regarde dit des. Roches police eux ahuris pleine marche moi demain. Essor verte noces oui non temps creve.',
+        date: 'Mar 12, 2022',
         book_id: 'rWgrDwAAQBAJ'
     },
     {
         user_id: 4,
         rating: 5,
-        text: 'Prudence profonde coupoles prennent roc pas precieux pourquoi. Ennemies massacre triomphe les cavernes des six toi. Je or devant blason palais et epouse sa atroce. Se on rendre ah sortit annees jusque jambes voyage. Chantant traverse soutenir net campagne sur remettre. Demeurons cet six art toutefois resterait les. Firmament sortaient net echauffer aux reprendre preferait eux.',
-        date: 'Jan 10, 2022',
+        text: 'Comme verts mes comme ces nul fut. Et ah te avons rente rouge je. Il ainsi il cause oh croix utile or. Jeunesse poitrine en epanouir la reparler la. Jet noble force par arret ras voila votre peu. Les ete appareil supplice vit epandent. Collines dissiper cavalier octogone la magasins ca. Sur casernes eut pic criaient couvrent defoncat heureuse. Bon oeil aux mats tuer chez poil peur. Saut poil il fils un nous je eu idee. Si mais haut oh ah quoi loin. Crepitent demeurent perimetre sa xv cartouche convertir he culbutent. Cercle qu valoir ca bruits le ca. Oeufs feu dit sorte rente trois ecole mur moins.',
+        date: 'June 10, 2022',
         book_id: 'rWgrDwAAQBAJ'
     },
 

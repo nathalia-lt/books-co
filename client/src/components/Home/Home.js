@@ -8,7 +8,7 @@ export default function Home( {user,setUser, userShelves, setUserShelves} ){
 
     const handleLogIn = () => {
         axios.post('/login', {
-            "username": "test",
+            "username": "demouser",
             "password": "12345"
         })
             .then(r => setUser(r.data))

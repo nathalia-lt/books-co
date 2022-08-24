@@ -77,9 +77,9 @@ let displayProfileMenu = clickedProfileMenu ? (
     return (
         <div className='header'>
             <div className="group" >
+                <div onClick={handleHomeClick} className='title'> The Book House </div>
                 <div>About</div>
                 <div> Clubs </div>
-                <div onClick={handleHomeClick} className='title'> The Book House </div>
             </div>
             <div className="group end">
                 <form onSubmit={handleSearchSubmit} >
