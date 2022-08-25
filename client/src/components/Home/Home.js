@@ -1,6 +1,7 @@
 
 import axios from 'axios'
 import { useState } from "react";
+import Auth from '../Auth/Auth';
 import HomeShelfcontainer from "../HomeShelfContainer/HomeShelfContainer";
 
 
@@ -27,8 +28,10 @@ export default function Home({ user, setUser, userShelves, setUserShelves }) {
 
     if (!user.username) return (
         <>
-            <button onClick={handleLogIn}>Log In</button>
-            <button onClick={handleShowMe}>Show Me</button>
+        <Auth
+        setUser={setUser}
+        setUserShelves={setUserShelves}
+        />
         </>
     )
     let bookShelvesToDisplay = userShelves.sort((a, b) => a.id - b.id).map(shelf => {

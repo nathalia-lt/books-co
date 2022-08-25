@@ -33,6 +33,7 @@ let [searchResults, setSearchResults] = useState({})
         setSearchResults={setSearchResults}
         user={user}
         setUser={setUser}
+        setUserShelves={setUserShelves}
       />
       <hr></hr>
       <Routes>
