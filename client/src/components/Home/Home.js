@@ -12,7 +12,6 @@ export default function Home( {user,setUser, userShelves, setUserShelves} ){
             "password": "12345"
         })
             .then(r => setUser(r.data))
-
     }
 
     const handleLogOut = () => {
@@ -32,13 +31,21 @@ export default function Home( {user,setUser, userShelves, setUserShelves} ){
             <button onClick={handleShowMe}>Show Me</button>
         </>
     )
-    let currentlyBooks = userShelves[0].books
+    let bookShelvesToDisplay = userShelves.sort((a, b) => a.id - b.id).map(shelf => {
+        return (
+            <div className="homeshelfcontainer">
+                <h3>{shelf.name}:</h3>
+                <div className="homeshelfrow"> 
+                <BookContainer
+                    books={shelf.books}
+                    />
+                    </div>
+            </div>
+        )
+    })
     return(
         <div>
-            <BookContainer
-            books={currentlyBooks}
-            />
-            <button onClick={handleLogOut}>Log Out</button>
+            {bookShelvesToDisplay}
         </div>
     )
 }

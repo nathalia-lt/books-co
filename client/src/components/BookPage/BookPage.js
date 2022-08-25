@@ -68,6 +68,7 @@ export default function BookPage({ userShelves, setUserShelves, user, setUser })
             axios.post('/removereview', { 'id': selectedReview })
         }
         setClickedStars(0)
+        setHoverStars(0)
         setReviewText('')
         setSelectedReview('')
         setClickedEdit(false)
