@@ -105,7 +105,8 @@ let displayProfileMenu = clickedProfileMenu ? (
     return (
         <div className='header'>
             <div className="group" >
-                <div onClick={handleHomeClick} className='title option'> The Book House </div>
+                <div onClick={handleHomeClick} className='title option'> {'Books & co.'} </div>
+                {/* the way that I can use the letter & without an error is to put it in curl brackets and string */}
                 <div className= 'option'>About</div>
                 <div className= 'option' > Clubs </div>
             </div>

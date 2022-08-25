@@ -1,45 +1,118 @@
-@use '../../styles' as s;
+@use '../../styles'as s;
 
 
-.userReviewCard{
+.userReviewCard {
     background-color: salmon;
     margin-bottom: 0.5%;
     padding: 10px;
     width: 97.5%;
+    border-radius: s.$radius;
 }
 
 
-.userReviewId{
+.userReviewId {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.userReviewTitle{
-    span{
-        color: white;
+.userReviewTitle {
+    display: flex;
+    flex-direction: row;
+    // justify-content: space-between;
+    align-items: center;
+    width: 50%;
+
+    span {
+        color: rgb(38, 38, 38);
     }
+
+    div,
+    span,
+    label,
+    button {
+        margin-right: 10px;
+    }
+
+    img {
+        margin-right: 5px;
+    }
+
+    button {
+        border-radius: s.$radius;
+        border: none;
+    }
+
+
+
 }
 
-.userReviewDate{
+.userReviewDate {
     font-size: 15px;
 }
 
-.userReviewText{
+.userReviewText {
     display: flex;
     flex-direction: row;
     word-wrap: break-word;
 }
 
-.reactionCounter{
+.reactionCounter {
     display: flex;
     flex-direction: row;
     margin-top: 1%;
-    h5{
+
+    h5 {
         margin-top: 2px;
         margin-bottom: 3px;
         margin-right: 4px;
     }
+
+    span:nth-of-type(1) {
+        font-size: 13px !important;
+        // align-self: center !important;
+        margin-top: -5% !important;
+    }
+
+    div:nth-child(2) {
+        span:nth-of-type(1) {
+            visibility: hidden;
+            position: relative;
+        }
+
+        span:nth-of-type(1):after {
+            color: black;
+            font-size: 20px;
+            position: absolute;
+            top: -30%;
+            left: 0%;
+            visibility: visible;
+            content: " + " !important;
+            // padding-left: 5px;
+            // padding-right: 5px;
+        }
+    }
+
+    &.madebyuser {
+        cursor: default !important;
+
+        div:nth-child(3) {
+            display: none !important;
+            cursor: default !important;
+            opacity: 0 !important;
+        }
+    }
+
 }
 
 
+
+.reviewProfile {
+    height: 18px;
+    border: 2px solid black;
+    border-radius: s.$radius;
+}
+
+.allStars {
+    font-size: 14px;
+}

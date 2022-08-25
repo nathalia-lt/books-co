@@ -141,6 +141,7 @@
   cursor: pointer;
   font-size: 30px;
   margin-left: 3%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .searchBar {
@@ -254,7 +255,7 @@
   margin-right: -4.5%;
 }
 .profile.pic {
-  height: 35px;
+  height: 33px;
   border: 2px solid black;
   border-radius: 5px;
 }
@@ -470,6 +471,7 @@
   margin-bottom: 0.5%;
   padding: 10px;
   width: 97.5%;
+  border-radius: 5px;
 }
 
 .userReviewId {
@@ -478,8 +480,27 @@
   align-items: center;
 }
 
+.userReviewTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+}
 .userReviewTitle span {
-  color: white;
+  color: rgb(38, 38, 38);
+}
+.userReviewTitle div,
+.userReviewTitle span,
+.userReviewTitle label,
+.userReviewTitle button {
+  margin-right: 10px;
+}
+.userReviewTitle img {
+  margin-right: 5px;
+}
+.userReviewTitle button {
+  border-radius: 5px;
+  border: none;
 }
 
 .userReviewDate {
@@ -501,6 +522,41 @@
   margin-top: 2px;
   margin-bottom: 3px;
   margin-right: 4px;
+}
+.reactionCounter span:nth-of-type(1) {
+  font-size: 13px !important;
+  margin-top: -5% !important;
+}
+.reactionCounter div:nth-child(2) span:nth-of-type(1) {
+  visibility: hidden;
+  position: relative;
+}
+.reactionCounter div:nth-child(2) span:nth-of-type(1):after {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: -30%;
+  left: 0%;
+  visibility: visible;
+  content: " + " !important;
+}
+.reactionCounter.madebyuser {
+  cursor: default !important;
+}
+.reactionCounter.madebyuser div:nth-child(3) {
+  display: none !important;
+  cursor: default !important;
+  opacity: 0 !important;
+}
+
+.reviewProfile {
+  height: 18px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.allStars {
+  font-size: 14px;
 }
 
 .dropDown {

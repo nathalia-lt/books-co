@@ -13,6 +13,7 @@
     cursor: pointer;
     font-size: 30px;
     margin-left: 3%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .searchBar {
@@ -112,7 +113,7 @@
     margin-left: 5%;
     margin-right: -4.5%;
     &.pic{
-        height: 35px;
+        height: 33px;
         border: 2px solid black;
         border-radius: s.$radius;
     }
