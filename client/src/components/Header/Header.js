@@ -118,7 +118,7 @@ let displayProfileMenu = clickedProfileMenu ? (
                         placeholder='Search'
                     />
                 </form>
-                {user.username ? <div className='profile' onClick={handleClickProfile}>⬜️ </div> : null}
+                {user.username ? <img src={user.profile_picture} className='profile pic' onClick={handleClickProfile}/> : null}
                     {user.username ? <div className='profile' onClick={handleClickProfile}>▾ </div> : null}
             </div>
             {displayProfileMenu}

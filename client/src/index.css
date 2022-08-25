@@ -194,6 +194,7 @@
   justify-content: flex-end;
   width: 50%;
   margin-right: 2.5%;
+  align-items: center;
 }
 
 .option {
@@ -251,6 +252,11 @@
   cursor: pointer;
   margin-left: 5%;
   margin-right: -4.5%;
+}
+.profile.pic {
+  height: 35px;
+  border: 2px solid black;
+  border-radius: 5px;
 }
 
 .bookPageCard {
