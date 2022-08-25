@@ -58,7 +58,7 @@
 }
 
 .reviewContainer {
-  background-color: lightblue;
+  background-color: #FFE4CF;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -270,7 +270,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #C1554E;
+  background-color: #66C4C7;
   height: 100%;
   width: 35%;
   border-top-left-radius: 3%;
@@ -278,7 +278,7 @@
 }
 
 .bookPageCardMain {
-  background-color: #FFC1B3;
+  background-color: #FFE4CF;
   height: 100%;
   width: 65%;
   border-top-right-radius: 3%;
@@ -396,7 +396,7 @@
 }
 
 .featuredCardBottom {
-  background-color: palevioletred;
+  background-color: #D8B5DE;
   padding: 30px;
   padding-top: 3px;
   border-radius: 0px 0px 5px 0px;
@@ -538,7 +538,7 @@ body {
 .display {
   display: flex;
   flex-direction: column;
-  background-color: #FE8A7F;
+  background-color: #FAEBD7;
   height: 100%;
   width: 75%;
   align-items: center;

@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2022_08_22_152902) do
 
   create_table "bookclubs", force: :cascade do |t|
     t.string "name"
+    t.json "host"
+    t.string "description"
     t.json "books", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -66,6 +68,7 @@ ActiveRecord::Schema.define(version: 2022_08_22_152902) do
     t.string "username"
     t.string "first_name"
     t.string "last_name"
+    t.string "profile_picture", default: "https://img.icons8.com/external-kiranshastry-solid-kiranshastry/128/000000/external-user-interface-kiranshastry-solid-kiranshastry.png"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
