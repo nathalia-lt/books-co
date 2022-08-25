@@ -130,34 +130,6 @@
   margin-top: 15%;
 }
 
-.homeContainer {
-  padding: 35px;
-  padding-top: 0px;
-  height: 87.5vh;
-}
-
-.homeshelfrow {
-  margin-top: -10px;
-  transform: scale(0.7);
-}
-.homeshelfrow h3 {
-  transform: scale(1);
-}
-.homeshelfrow .bookContainer {
-  justify-content: flex-start;
-  margin-left: -15%;
-}
-
-.homeshelfcontainer {
-  background-color: #E3D4C1;
-}
-.homeshelfcontainer h3 {
-  margin-bottom: -2%;
-  margin-top: 2.5%;
-  padding-left: 2%;
-  background-color: #FAEBD7;
-}
-
 .header {
   display: flex;
   flex-direction: row;
@@ -592,6 +564,35 @@
 }
 
 .clubName {
+  cursor: pointer;
+}
+
+.homeContainer {
+  padding: 35px;
+  padding-top: 0px;
+  height: 87.5vh;
+}
+
+.homeshelfrow {
+  margin-top: -10px;
+  transform: scale(0.7);
+}
+.homeshelfrow h3 {
+  transform: scale(1);
+}
+.homeshelfrow .bookContainer {
+  justify-content: flex-start;
+  margin-left: -15%;
+}
+
+.homeshelfcontainer {
+  background-color: #E3D4C1;
+}
+.homeshelfcontainer h3 {
+  margin-bottom: -2%;
+  margin-top: 2.5%;
+  padding-left: 2%;
+  background-color: #FAEBD7;
   cursor: pointer;
 }
 

@@ -1,10 +1,10 @@
-import BookContainer from "../BookContainer/BookContainer";
 
 import axios from 'axios'
 import { useState } from "react";
+import HomeShelfcontainer from "../HomeShelfContainer/HomeShelfContainer";
 
 
-export default function Home( {user,setUser, userShelves, setUserShelves} ){
+export default function Home({ user, setUser, userShelves, setUserShelves }) {
 
     const handleLogIn = () => {
         axios.post('/login', {
@@ -32,18 +32,17 @@ export default function Home( {user,setUser, userShelves, setUserShelves} ){
         </>
     )
     let bookShelvesToDisplay = userShelves.sort((a, b) => a.id - b.id).map(shelf => {
+        // you can only use 'useState' or other react hooks (useEffect, etc) directly inside of a React Component (function with a capital first letter) 
+        // you can not use 'useState' or other react hooks inside of a function (or .map, etc) made inside of a component 
+        // to get around this issue,  I had to create a completely new component so that I can create a variable with state for every shelf passed into this component
+
         return (
-            <div className="homeshelfcontainer">
-                <h3>{shelf.name}:</h3>
-                <div className="homeshelfrow"> 
-                <BookContainer
-                    books={shelf.books}
-                    />
-                    </div>
-            </div>
+            <HomeShelfcontainer
+                shelf={shelf}
+            />
         )
     })
-    return(
+    return (
         <div>
             {bookShelvesToDisplay}
         </div>
