@@ -60,7 +60,7 @@ let [clickedProfileMenu, setClickedProfileMenu] = useState(false)
 // }//if I only have one condicional that I am looking for I just need to set the th if and the else will be the opposite
 
 
-function handleClickProfile(){
+function handleClickProfileIcon(){
     setClickedProfileMenu(!clickedProfileMenu)
     setTimeout(() => {
         //I did an annonymous function here, because I am only use this function here. I dont need to make it outside and take more space.
@@ -95,7 +95,7 @@ const handleLogOut = () => {
 let displayProfileMenu = clickedProfileMenu ? (
     <div className='profile-menu' onMouseOver={handleMenuHover} onMouseOut={handleMouseOut}>
         <div className='menu-option'>🌄 {user.first_name} {user.last_name}</div>
-        <div className='menu-option'>{user.username}</div>
+        <div className='menu-option option' onClick={handleClickProfile}>Profile</div>
         <div className='menu-option option'>Settings</div>
         <div className='menu-option option' onClick={handleLogOut}>Log Out</div>
     </div>
@@ -129,7 +129,7 @@ function handleClickAbout(){
                         placeholder='Search'
                     />
                 </form>
-                {user.username ? <img src={user.profile_picture} className='profile pic' onClick={handleClickProfile}/> : null}
+                {user.username ? <img src={user.profile_picture} alt='profile' className='profile pic' onClick={handleClickProfileIcon}/> : null}
                     {user.username ? <div className='profile' onClick={handleClickProfile}>▾ </div> : null}
             </div>
             {displayProfileMenu}
