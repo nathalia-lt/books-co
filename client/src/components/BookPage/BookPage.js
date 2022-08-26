@@ -145,6 +145,7 @@ export default function BookPage({ userShelves, setUserShelves, user, setUser })
         //variable inside the function because it has to be for each review
         let madeByUser = review.user.id === user.id
         let inEditMode = selectedReview === review.id
+        let onProfile = false
 
         return (
             <BookReview
@@ -156,6 +157,7 @@ export default function BookPage({ userShelves, setUserShelves, user, setUser })
                 setBookReviews={setBookReviews}
                 handleClickEdit={handleClickEdit}
                 inEditMode={inEditMode}
+                onProfile={onProfile}
             />
         )
     })

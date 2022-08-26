@@ -1,0 +1,105 @@
+@use "../../styles" as s;
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: #FFB3A6;
+  height: 850px;
+  padding: 50px;
+  border-radius: s.$radius;
+}
+
+.profileCardTop {
+  background-color: s.$primary;
+  border-radius: s.$radius;
+  height: 63.5%;
+}
+.profileCardBottom {
+  background-color: s.$primary;
+  border-radius: s.$radius;
+  height: 36.5%;
+
+  .reviewContainer{
+    height: inherit;
+  }
+}
+
+.profilecardtitle {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.profilecardsubtitle {
+  margin-left: 5%;
+}
+
+.south {
+  background-color: #D8B5DE;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 0.5%;
+  padding-bottom: 1%;
+
+  h3{
+    border-bottom: 2px solid grey;
+  }
+}
+
+.profileDisplayAllShelves {
+//   margin-top: -1.5%;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  margin-bottom: 1%;
+  &::-webkit-scrollbar {
+    height: 5px;
+  }
+}
+.profileShelfBookCard {
+  margin-right: 2.5%;
+  display: flex;
+  flex-direction: column;
+  background-color: salmon;
+  border-radius: s.$radius;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.profileShelfBookCardTitle {
+  font-weight: 550;
+  border-bottom: 1px solid;
+  margin-bottom: 2.5%;
+}
+
+.profileShelfBookToDisplay {
+  .bookCard {
+    height: 180.5px;
+    width: 125px;
+
+    .bookCover {
+    height: 110px;
+    width: 90px;
+    }
+
+    .bookTitle{
+        font-size: smaller;
+    }
+
+    .bookAuthor{}
+  }
+}
+
+.profilepage{
+    height: 150%;
+    overflow-y: scroll;
+}
+
+.profileImage{
+    height: 80px;
+}

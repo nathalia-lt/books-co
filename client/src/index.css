@@ -560,6 +560,21 @@
   font-size: 14px;
 }
 
+.userReviewBookID {
+  font-size: 15px;
+  cursor: pointer;
+}
+.userReviewBookID:hover {
+  color: white;
+}
+
+.reviewUser {
+  cursor: pointer;
+}
+.reviewUser:hover {
+  color: black;
+}
+
 .dropDown {
   cursor: pointer;
 }
@@ -909,6 +924,102 @@
 
 .demo:hover {
   background-color: #ffb444;
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: #FFB3A6;
+  height: 850px;
+  padding: 50px;
+  border-radius: 5px;
+}
+
+.profileCardTop {
+  background-color: peachpuff;
+  border-radius: 5px;
+  height: 63.5%;
+}
+
+.profileCardBottom {
+  background-color: peachpuff;
+  border-radius: 5px;
+  height: 36.5%;
+}
+.profileCardBottom .reviewContainer {
+  height: inherit;
+}
+
+.profilecardtitle {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.profilecardsubtitle {
+  margin-left: 5%;
+}
+
+.south {
+  background-color: #D8B5DE;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 0.5%;
+  padding-bottom: 1%;
+}
+.south h3 {
+  border-bottom: 2px solid grey;
+}
+
+.profileDisplayAllShelves {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  margin-bottom: 1%;
+}
+.profileDisplayAllShelves::-webkit-scrollbar {
+  height: 5px;
+}
+
+.profileShelfBookCard {
+  margin-right: 2.5%;
+  display: flex;
+  flex-direction: column;
+  background-color: salmon;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.profileShelfBookCardTitle {
+  font-weight: 550;
+  border-bottom: 1px solid;
+  margin-bottom: 2.5%;
+}
+
+.profileShelfBookToDisplay .bookCard {
+  height: 180.5px;
+  width: 125px;
+}
+.profileShelfBookToDisplay .bookCard .bookCover {
+  height: 110px;
+  width: 90px;
+}
+.profileShelfBookToDisplay .bookCard .bookTitle {
+  font-size: smaller;
+}
+.profilepage {
+  height: 150%;
+  overflow-y: scroll;
+}
+
+.profileImage {
+  height: 80px;
 }
 
 body {

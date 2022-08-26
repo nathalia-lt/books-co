@@ -1,14 +1,21 @@
 import { GithubSelector, SlackCounter } from '@charkour/react-reactions';
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function BookReview({ review, user, madeByUser, bookReviews, setBookReviews, handleClickEdit, inEditMode }) {
+export default function BookReview({ review, user, madeByUser, bookReviews, setBookReviews, handleClickEdit, inEditMode, onProfile }) {
 
     let [reactions, setReactions] = useState(review.reactions)
 
     let [displayEmojis, setDisplayEmojis] = useState(false)
 
     let [clickedDelete, setClickedDelete] = useState(false)
+
+    let navigate = useNavigate()
+
+    function handleClickProfile() {
+        navigate('/profile/' + review.user.username)
+    }
 
 
     function handleClickDelete() {
@@ -37,7 +44,7 @@ export default function BookReview({ review, user, madeByUser, bookReviews, setB
         {inEditMode ? null : <button onClick={handleClickDelete} >Delete</button>}
     </>
 
-    let userButtons = madeByUser ? buttons : null
+    let userButtons = madeByUser && !onProfile ? buttons : null
 
 
 
@@ -80,14 +87,21 @@ export default function BookReview({ review, user, madeByUser, bookReviews, setB
 
     let counterClass = madeByUser ? 'reactionCounter madebyuser' : 'reactionCounter'
 
+    let displayBookTitle = onProfile ? review.book_name + ' - ' + review.book_author : ''
+
+    function handleClickBookTitle() {
+        navigate('/book/' + review.book_id)
+    }
+
 
     return (
         <div className='userReviewCard' >
             <hr></hr>
             <div className='userReviewId' >
-                <div className='userReviewTitle' ><img className='reviewProfile' src={review.user.profile_picture} alt='' /> <span> {review.user.username}</span> <div> - </div>  <div className='allStars'> {'★'.repeat(review.rating)} </div>
+                <div className='userReviewTitle' ><img className='reviewProfile' src={review.user.profile_picture} alt='' /> <span className='reviewUser'  onClick={handleClickProfile} > {review.user.username}</span> <div> - </div>  <div className='allStars'> {'★'.repeat(review.rating) }  </div>
                     {userButtons}
                 </div>
+                <div className="userReviewBookID" onClick={handleClickBookTitle}>{displayBookTitle}</div>
                 <div className='userReviewDate'> {review.date}</div>
             </div>
             <div className='userReviewText'> {review.text} </div>

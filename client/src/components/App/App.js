@@ -6,6 +6,8 @@ import Home from '../Home/Home'
 import Header from '../Header/Header'
 import BookPage from '../BookPage/BookPage'
 import SearchPage from '../SearchPage/SearchPage'
+import Profile from '../Profile/Profile'
+import About from '../About/About'
 
 function App() {
   let [user,setUser] = useState({})
@@ -67,6 +69,18 @@ let [searchResults, setSearchResults] = useState({})
           <SearchPage
           searchResults={searchResults}
           setSearchResults={setSearchResults}
+          />
+        }
+        />
+                <Route path='/profile/:username' element={
+          <Profile
+          user={user}
+          setUser={setUser}
+          />
+        }
+        />
+        <Route path='/about' element={
+          <About
           />
         }
         />

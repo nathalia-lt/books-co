@@ -116,3 +116,19 @@
 .allStars {
     font-size: 14px;
 }
+
+.userReviewBookID {
+    font-size: 15px;
+    cursor: pointer;
+  
+    &:hover{
+      color: white;
+    }
+  }
+
+  .reviewUser{
+    cursor: pointer;
+    &:hover{
+      color: s.$text;
+    }
+  }

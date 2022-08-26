@@ -75,14 +75,12 @@ function handleMenuHover(){
     setHoverOnProfileMenu(true)
 }
 
-
 function handleMouseOut(){//10 secs. afters 10 secs are up it is going to run wharever it is in the function
     setHoverOnProfileMenu(false)
     setTimeout(() => {
         setClickedProfileMenu(false)
     },5*1000) //10 secs. afters 10 secs are up it is going to run wharever it is in the function
 }
-
 
 
 const handleLogOut = () => {
@@ -103,13 +101,24 @@ let displayProfileMenu = clickedProfileMenu ? (
     </div>
 ) : null
 
+function handleClickProfile(){
+    navigate('/profile/' + user.username)
+}
+
+function handleClickAbout(){
+    navigate('/about')
+}
+
+
+
     return (
         <div className='header'>
             <div className="group" >
                 <div onClick={handleHomeClick} className='title option'> {'Books & co.'} </div>
                 {/* the way that I can use the letter & without an error is to put it in curl brackets and string */}
-                <div className= 'option'>About</div>
-                <div className= 'option' > Clubs </div>
+                <div className= 'option' onClick={handleClickAbout}  >About</div>
+                <div className= 'option' onClick={handleClickProfile}   >Profile</div>
+                <div className= 'option' > Book Clubs </div>
             </div>
             <div className="group end">
                 <form onSubmit={handleSearchSubmit} >
