@@ -35,6 +35,12 @@ class UsersController < ApplicationController
     render json: user, status: :created
   end
 
+  def find_user
+    username = params[:username]
+    user = User.find_by(username: username)
+    render json: user
+  end
+
   def show
     render json: @current_user, include: ["clubusers.bookclub"], status: :ok
   end

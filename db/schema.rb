@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 2022_08_22_152902) do
     t.string "date"
     t.string "text"
     t.string "book_id"
+    t.string "book_name"
+    t.string "book_author"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_reviews_on_user_id"

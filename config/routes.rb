@@ -38,5 +38,11 @@ Rails.application.routes.draw do
 
   #Clubuser
   post 'removeclubuser', to: "clubusers#destroy"
+
+
+  #Profile Page
+  post 'profileuser', to: "users#find_user"
+  post 'profilereviews', to: "reviews#find_user_reviews"
+  post 'profileshelves', to: "shelves#find_user_shelves"
    
 end

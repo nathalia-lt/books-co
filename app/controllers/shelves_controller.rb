@@ -28,6 +28,12 @@ class ShelvesController < ApplicationController
         render json: shelf
     end
 
+    def find_user_shelves
+        username = params[:username]
+        user = User.find_by(username: username)
+        render json: user.shelves
+      end
+
     # def update_status
     #     user = User.find(params[:user_id])
     #     book = params[:book]
