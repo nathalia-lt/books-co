@@ -82,6 +82,7 @@ export default function BookPage({ userShelves, setUserShelves, user, setUser })
         axios.all([bookDataRequest, bookReviewRequest])
             .then(axios.spread((res1, res2) => {
                 setPageData(res1.data)
+                console.log(res1.data)
                 setBookReviews(res2.data)
             }))
     }, [])

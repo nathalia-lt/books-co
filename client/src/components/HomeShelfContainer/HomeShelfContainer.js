@@ -9,7 +9,7 @@ import BookContainer from "../BookContainer/BookContainer";
 
 export default function HomeShelfcontainer( {shelf} ) {
 
-    let [clickedShelfName, setClickedShelfName] = useState(false)
+    let [clickedShelfName, setClickedShelfName] = useState(true)
 
     function handleClickShelfName(){
         setClickedShelfName(!clickedShelfName)
