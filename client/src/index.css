@@ -551,8 +551,7 @@
 }
 
 .reviewProfile {
-  height: 18px;
-  border: 2px solid black;
+  height: 24px;
   border-radius: 5px;
 }
 
@@ -1020,6 +1019,57 @@
 
 .profileImage {
   height: 80px;
+}
+
+.aboutPageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.paragraph {
+  font-family: sans-serif;
+  margin-right: 2%;
+  text-indent: 0.5em;
+  line-height: 1.5em;
+}
+
+.aboutPage {
+  background-color: peachpuff;
+  color: black;
+  width: 550px;
+  height: 500px;
+  margin: 18px;
+  border-radius: 5px;
+}
+.aboutPage h1 {
+  font-family: sans-serif;
+}
+.aboutPage h4 {
+  align-self: flex-start;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+}
+.icons img {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  margin-right: 3%;
+}
+.icons.js img {
+  cursor: default;
+}
+
+.aboutInformation {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
 body {

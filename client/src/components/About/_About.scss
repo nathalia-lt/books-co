@@ -1,1 +1,59 @@
 @use "../../styles" as s;
+
+.aboutPageContainer{
+    display: flex;
+    justify-content: center;
+}
+
+
+.paragraph{
+    font-family: sans-serif;
+    margin-right: 2%;
+    text-indent: 0.5em;
+    line-height: 1.5em;
+}
+
+.aboutPage{
+    background-color: s.$primary;
+    color: s.$text;
+    width: 550px;
+    height: 500px;
+    margin: 18px;
+    border-radius: s.$radius;
+    
+    h1{
+        font-family: sans-serif;
+    }
+    
+    h4{
+        align-self: flex-start;
+    }
+}
+
+
+    .icons{
+        display: flex;
+        flex-direction: row;
+        align-self: flex-start;
+
+        img{
+            cursor: pointer;
+            height: 50px;
+            width: 50px;
+            margin-right: 3%;
+        }
+        &.js{
+            img{
+                cursor: default;
+            }
+        }
+    }
+
+.aboutInformation{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column; 
+    margin-left: 3%;
+    margin-right: 3%;
+}

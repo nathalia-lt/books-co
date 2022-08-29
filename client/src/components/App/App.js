@@ -8,6 +8,8 @@ import BookPage from '../BookPage/BookPage'
 import SearchPage from '../SearchPage/SearchPage'
 import Profile from '../Profile/Profile'
 import About from '../About/About'
+import BookClub from '../BookClub/BookClub'
+import Community from '../Community/Community'
 
 function App() {
   let [user,setUser] = useState({})
@@ -81,6 +83,16 @@ let [searchResults, setSearchResults] = useState({})
         />
         <Route path='/about' element={
           <About
+          />
+        }
+        />
+        <Route path='/bookclub/:id' element={
+          <BookClub
+          />
+        }
+        />
+        <Route path='/community' element={
+          <Community
           />
         }
         />

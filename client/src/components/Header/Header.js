@@ -109,6 +109,9 @@ function handleClickAbout(){
     navigate('/about')
 }
 
+function handleClickBookClubs(){
+    navigate('/community')
+}
 
 
     return (
@@ -116,9 +119,9 @@ function handleClickAbout(){
             <div className="group" >
                 <div onClick={handleHomeClick} className='title option'> {'Books & co.'} </div>
                 {/* the way that I can use the letter & without an error is to put it in curl brackets and string */}
-                <div className= 'option' onClick={handleClickAbout}  >About</div>
-                <div className= 'option' onClick={handleClickProfile}   >Profile</div>
-                <div className= 'option' > Book Clubs </div>
+                <div className= 'option' onClick={handleClickAbout} >About</div>
+                <div className= 'option' onClick={handleClickProfile} >Profile</div>
+                <div className= 'option' onClick={handleClickBookClubs}  > Book Clubs </div>
             </div>
             <div className="group end">
                 <form onSubmit={handleSearchSubmit} >
