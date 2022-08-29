@@ -932,20 +932,20 @@
   flex-wrap: wrap;
   margin-left: 20%;
   margin-right: 20%;
-  background-color: #FFB3A6;
+  background-color: #FAEBD7;
   height: 850px;
   padding: 50px;
   border-radius: 5px;
 }
 
 .profileCardTop {
-  background-color: peachpuff;
+  background-color: #E3D4C1;
   border-radius: 5px;
   height: 63.5%;
 }
 
 .profileCardBottom {
-  background-color: peachpuff;
+  background-color: #FAEBD7;
   border-radius: 5px;
   height: 36.5%;
 }
@@ -1034,7 +1034,7 @@
 }
 
 .aboutPage {
-  background-color: peachpuff;
+  background-color: #66C4C7;
   color: black;
   width: 550px;
   height: 500px;
