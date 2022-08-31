@@ -34,36 +34,6 @@ class ShelvesController < ApplicationController
         render json: user.shelves
       end
 
-    # def update_status
-    #     user = User.find(params[:user_id])
-    #     book = params[:book]
-    #     bookToRemove = book['id']
-    #     for shelf in user.shelves.slice(0,4)
-    #         if (shelf.id == params[:shelf_id])
-    #             books = shelf.books
-    #             books << books
-    #             shelf.update!(books:books)
-    #         else 
-    #             books = shelf.books
-    #             newBooks = books.filter{|book| book['id'] != bookToRemove}
-    #             shelf.update!(books: newBooks)
-    #         end
-    #     end
-
-    #     render json: book
-    # end
-
-    # def clear_status
-    #     user = User.find(params[:user_id])
-    #     bookToRemove = params[:id]
-    #     for shelf in user.shelves.slice(0,4)
-    #         books = shelf.books
-    #         newBooks = books.filter{|book| book['id'] != bookToRemove}
-    #         shelf.update!(books: newBooks)
-    #     end
-    #     render json: user.shelves
-    # end
-
     def create
         shelf = Shelf.create!(shelf_params)
         shelf.save
@@ -71,7 +41,7 @@ class ShelvesController < ApplicationController
     end
 
     def destroy
-        shelf = Shelf.find_by(params[:id])
+        shelf = Shelf.find(params[:id])
         shelf.destroy
         render json: shelf
     end

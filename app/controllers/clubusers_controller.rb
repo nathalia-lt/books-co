@@ -1,5 +1,9 @@
 class ClubusersController < ApplicationController
 
+    def user_clubusers
+        render json: @current_user.clubusers
+    end
+
     def create
         clubuser = Clubuser.create!(clubuser_params)
         clubuser.save
@@ -9,7 +13,7 @@ class ClubusersController < ApplicationController
     def destroy
         clubuser = Clubuser.find(params[:id])
         clubuser.destroy
-        header :no_content
+        render json: clubuser
     end
 
     private

@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2022_08_22_152902) do
     t.json "host"
     t.string "description"
     t.json "books", default: [], array: true
+    t.string "image", default: "https://img.icons8.com/ios/50/000000/storytelling.png"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
