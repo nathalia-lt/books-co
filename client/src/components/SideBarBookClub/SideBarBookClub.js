@@ -1,20 +1,34 @@
-import { useState } from "react"
 import axios from "axios"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
+export default function SideBarBookClub({ club, setUser, book, page, userBookClubs, setUserBookClubs }) {
+    let navigate = useNavigate()
+    let inClub = club.books.length ? club.books.map(clubBook => clubBook.id).includes(book.id) : false
 
-
-export default function SideBarBookClub( {club, book, setUser} ){
-
-    let inClub = club.books.length ? club.books.map(shelfBook => shelfBook.id).includes(book.id) : false
     let [clickedDropDown, setClickedDropDown] = useState(false)
 
-    function handleClickClub(){
+    function handleClickRow() {
         setClickedDropDown(!clickedDropDown)
     }
 
-    let showOptions = clickedDropDown ? <div>  <li>Go to page </li> <li onClick={handleSubmit}> {inClub ? 'Remove from':'Add to'} Reading List </li> </div> : null
+    function handleClickVisit() {
+        navigate('/bookclub/' + club.id)
+    }
 
-    let dropDownTriangle = clickedDropDown ? '▾' : '▴'
+    let showOptions = clickedDropDown && <div>
+        <div className="sideBarBookClubContent">
+            <div className="clubOption">
+                <div onClick={handleClickVisit}>Visit Club Page</div>
+            </div>
+            <div className="clubOption">
+                {page === 'bookpage' && <div onClick={handleSubmit}>{inClub ? 'Remove from' : 'Add to'} Reading List</div>}
+            </div>
+        </div>
+    </div>
+
+
+    let dropDownTriangle = clickedDropDown ? '▼' : '▲'
 
     function handleSubmit() {
         if (inClub) {
@@ -23,10 +37,11 @@ export default function SideBarBookClub( {club, book, setUser} ){
                 "book_id": book.id,
             }
             axios.post('/removebookfromclub', clubUpdate)
-                .then(r => { 
-                    setUser(r.data)
+                .then(r => {
+                    let updatedBookClubs = userBookClubs.filter(clubuser => clubuser.id !== r.data.id)
+                    setUserBookClubs([...updatedBookClubs, r.data])
                 })
-            alert('This book has been removed from ' + club.name + '\s reading list.')
+            alert('This book has been removed from the reading list of ' + club.name)
         } else {
             let clubUpdate = {
                 "club_id": club.id,
@@ -34,20 +49,20 @@ export default function SideBarBookClub( {club, book, setUser} ){
             }
             axios.post('/addbooktoclub', clubUpdate)
                 .then(r => {
-                    setUser(r.data)
+                    let updatedBookClubs = userBookClubs.filter(clubuser => clubuser.id !== r.data.id)
+                    setUserBookClubs([...updatedBookClubs, r.data])
                 })
-            alert('This book has been added to ' + club.name + '\s reading list')
+            alert('This book has been added to the reading list for ' + club.name)
         }
     }
 
-
-    return(
+    return (
         <div className="clubCard">
-        <div className='clubRow' onClick={handleClickClub} >
-            <div className='clubName' > {club.name} </div>
-            <div className='dropDown'> {dropDownTriangle} </div>
+            <div className="clubrow" onClick={handleClickRow}>
+                <div className="clubname">{club.name}</div>
+                <div className='dropdown'>{dropDownTriangle}</div>
+            </div>
+            {showOptions}
         </div>
-        {showOptions}
-    </div>
     )
 }

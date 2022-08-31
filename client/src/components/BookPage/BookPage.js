@@ -178,14 +178,14 @@ export default function BookPage({ userShelves, setUserShelves, user, setUser, u
 
     return (
         <div className='mainContainer' >
-        {/* <SideBar
+        <SideBar
                 user={user}
                 setUser={setUser}
                 pageData={pageData}
                 page={'bookpage'}
                 userBookClubs={userBookClubs}
                 setUserBookClubs={setUserBookClubs}
-            /> */}
+            />
 
             <div className='display' >
                 <FeaturedBook

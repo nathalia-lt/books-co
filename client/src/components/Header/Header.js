@@ -117,7 +117,7 @@ function handleClickBookClubs(){
     return (
         <div className='header'>
             <div className="group" >
-                <div onClick={handleHomeClick} className='title option'> {'Books & co.'} </div>
+                <div onClick={handleHomeClick} className='title option'> {'Books & Co.'} </div>
                 {/* the way that I can use the letter & without an error is to put it in curl brackets and string */}
                 <div className= 'option' onClick={handleClickAbout} >About</div>
                 <div className= 'option' onClick={handleClickProfile} >Profile</div>

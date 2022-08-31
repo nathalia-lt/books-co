@@ -98,6 +98,12 @@ function App() {
         />
         <Route path='/bookclub/:id' element={
           <BookClub
+            user={user}
+            setUser={setUser}
+            bookClubs={bookClubs}
+            setBookClubs={setBookClubs}
+            userBookClubs={userBookClubs}
+            setUserBookClubs={setUserBookClubs}
           />
         }
         />

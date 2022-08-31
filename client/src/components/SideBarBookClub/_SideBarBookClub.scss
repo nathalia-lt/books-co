@@ -1,9 +1,63 @@
-@use '../../styles' as s;
+@use "../../styles" as s;
 
-.dropDown{
-    cursor: pointer;
+.clubrow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: s.$text;
+    font-size: 18px;
+
+    div {
+        margin-right: 1.5%;
+    }
+
+    .clubname{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        &:hover{
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    .dropdown{
+        font-size: 15px;
+        &:hover{
+            color: white;
+            cursor: pointer;
+        }
+    }
+
 }
 
-.clubName{
+.clubOption{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: s.$text;
+    font-size: 15px;
+    margin-left: 10%;
+    margin-top: 1%;
     cursor: pointer;
+
+
+    div {
+        margin-right: 1.5%;
+        &:hover{
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    button {
+        border: none;
+
+    }
+}
+
+.sideBarBookClubContent{
+    background-color: powderblue;
+    border-radius: 0px 0px s.$radius s.$radius;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }

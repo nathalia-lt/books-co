@@ -16,12 +16,12 @@
 .profileCardTop {
   background-color: #E3D4C1;
   border-radius: s.$radius;
-  height: 63.5%;
+  height: 65;
 }
 .profileCardBottom {
   background-color: #E3D4C1;
   border-radius: s.$radius;
-  height: 40%;
+  height: 35%;
 
   .reviewContainer{
     height: inherit;
@@ -54,7 +54,7 @@
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 0.5%;
-  padding-bottom: 1%;
+  padding-bottom: 5%;
 
   h3{
     border-bottom: 2px solid grey;
@@ -80,6 +80,14 @@
   justify-content: center;
   align-items: center;
   padding: 5px;
+  &.bookClubUser {
+    img {
+      height: 80px;
+      width: 80px;
+      border: 2px solid;
+      border-radius: 50px;
+    }
+  }
 }
 
 .profileShelfBookCardTitle {
