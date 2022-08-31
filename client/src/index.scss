@@ -34,7 +34,6 @@ body{
 .mainContainer{
     display: flex;
     flex-direction: row;
-    background-color: greenyellow;
     height: 730px;
     justify-content: center;
     align-content: center;
@@ -57,7 +56,7 @@ body{
     width: 5px;
   }
   ::-webkit-scrollbar-track {
-    background: #C1554E;
+    background: #799188;
   }
   ::-webkit-scrollbar-thumb {
     background-color: #fff;

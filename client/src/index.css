@@ -6,7 +6,7 @@
   align-content: center;
   width: 175px;
   height: 300px;
-  background-color: #66C4C7;
+  background-color: #B6B9A3;
   border-radius: 3%;
   margin-top: 3%;
   margin-right: 2.5%;
@@ -214,7 +214,7 @@
   text-align: right;
   top: 7.5%;
   left: 89%;
-  background-color: palegreen;
+  background-color: #e3d4c1;
   z-index: 1;
   -webkit-animation: dropDown 0.45s ease-in-out forwards;
           animation: dropDown 0.45s ease-in-out forwards;
@@ -279,7 +279,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #66C4C7;
+  background-color: #B6B9A3;
   height: 100%;
   width: 35%;
   border-top-left-radius: 3%;
@@ -331,7 +331,7 @@
   margin-top: 3%;
   width: 36%;
   font-size: 16px;
-  background-color: #66C4C7;
+  background-color: #B6B9A3;
   border-radius: 5px;
   padding: 20px;
 }
@@ -405,7 +405,7 @@
 }
 
 .featuredCardBottom {
-  background-color: #D8B5DE;
+  background-color: #568289;
   padding: 30px;
   padding-top: 3px;
   border-radius: 0px 0px 5px 0px;
@@ -469,7 +469,7 @@
 }
 
 .userReviewCard {
-  background-color: salmon;
+  background-color: #85B5A4;
   margin-bottom: 0.5%;
   padding: 10px;
   width: 97.5%;
@@ -623,7 +623,7 @@
 }
 
 .sideBarBookClubContent {
-  background-color: powderblue;
+  background-color: #8A9E8D;
   border-radius: 0px 0px 5px 5px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -644,6 +644,7 @@
 }
 .homeshelfrow .bookClubCard {
   margin-right: 2.5%;
+  background-color: #cebfaa;
 }
 .homeshelfrow .bookContainer {
   justify-content: flex-start;
@@ -1026,7 +1027,7 @@
 }
 
 .south {
-  background-color: #D8B5DE;
+  background-color: #C5B7A4;
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 0.5%;
@@ -1040,6 +1041,7 @@
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
+  overflow-y: hidden;
   margin-bottom: 1%;
 }
 .profileDisplayAllShelves::-webkit-scrollbar {
@@ -1050,11 +1052,12 @@
   margin-right: 2.5%;
   display: flex;
   flex-direction: column;
-  background-color: salmon;
+  background-color: #a2a491;
   border-radius: 5px;
   justify-content: center;
   align-items: center;
   padding: 5px;
+  margin-bottom: 2%;
 }
 .profileShelfBookCard.bookClubUser img {
   height: 80px;
@@ -1102,7 +1105,7 @@
 }
 
 .aboutPage {
-  background-color: #66C4C7;
+  background-color: #e3d4c1;
   color: black;
   width: 550px;
   height: 500px;
@@ -1204,7 +1207,7 @@
   align-items: center;
   padding: 30px;
   padding-bottom: 10px;
-  background-color: rgb(128, 180, 128);
+  background-color: #e3d4c1;
   height: 375px;
   width: 275px;
   border-radius: 7.5px;
@@ -1213,12 +1216,12 @@
 }
 .bookClubCard h2 {
   margin-bottom: 0px;
-  color: white;
+  color: black;
   text-align: center;
   cursor: default;
 }
 .bookClubCard span {
-  color: white;
+  color: black;
 }
 .bookClubCard hr {
   width: 100%;
@@ -1259,7 +1262,7 @@
   transform: scale(1);
 }
 .bookClubCard.addNew {
-  background-color: darkgreen;
+  background-color: #BFA888;
 }
 .bookClubCard.addNew img {
   height: 100px;
@@ -1295,7 +1298,7 @@
   flex-direction: column;
   height: 100px;
   width: 200px;
-  background-color: rgb(241, 116, 158);
+  background-color: #B6B9A3;
   padding: 15px;
   justify-content: center;
   align-content: center;
@@ -1317,14 +1320,14 @@
 .commContainer {
   height: 100%;
   width: 100%;
-  background-color: maroon;
+  background-color: rgb(250, 235, 215);
   padding: 30px;
   padding-top: 10px;
   color: black;
 }
 
 .clubsContainer {
-  background-color: skyblue;
+  background-color: rgb(250, 235, 215);
   height: 89.5%;
   display: flex;
   flex-direction: row;
@@ -1357,13 +1360,13 @@
 
 .sideBarBookClubsTitle {
   margin-bottom: 0%;
-  background-color: orange;
+  background-color: #e3d4c1;
   padding: 10px;
   border-radius: 5px 5px 0px 0px;
 }
 
 .sideBarBookClubsContainer {
-  background-color: hotpink;
+  background-color: #B6B9A3;
   padding: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -1384,7 +1387,6 @@ body {
 .mainContainer {
   display: flex;
   flex-direction: row;
-  background-color: greenyellow;
   height: 730px;
   justify-content: center;
   align-content: center;
@@ -1405,7 +1407,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #C1554E;
+  background: #799188;
 }
 
 ::-webkit-scrollbar-thumb {
