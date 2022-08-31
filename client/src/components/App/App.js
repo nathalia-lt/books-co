@@ -65,6 +65,8 @@ function App() {
             setUserShelves={setUserShelves}
             user={user}
             setUser={setUser}
+            userBookClubs={userBookClubs}
+            setUserBookClubs={setUserBookClubs}
           />
         }
         />

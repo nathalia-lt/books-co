@@ -5,9 +5,10 @@ import axios from "axios"
 import FeaturedBook from "../FeaturedBook/FeaturedBook"
 import BookReview from "../BookReview/BookReview"
 import SideBarBookClub from "../SideBarBookClub/SideBarBookClub"
+import SideBar from "../Sidebar/Sidebar"
 
 
-export default function BookPage({ userShelves, setUserShelves, user, setUser }) {
+export default function BookPage({ userShelves, setUserShelves, user, setUser, userBookClubs, setUserBookClubs }) {
     let [hoverStars, setHoverStars] = useState(0)
     let [clickedStars, setClickedStars] = useState(0)
 
@@ -175,29 +176,16 @@ export default function BookPage({ userShelves, setUserShelves, user, setUser })
     // calculatebookingRating, calculates the average rating in the backEnd and API google ratings together
     let totalNumberOfBooksreviews = numRatings + bookReviews.length
 
-
-
-    let bookClubsToDisplay = bookClubs.map(club => {
-        return (
-        <SideBarBookClub
-        club={club}
-        book={pageData}
-        setUser={setUser}
-        />
-        )
-    })
-
-
     return (
         <div className='mainContainer' >
-            <div className='sideBar'  >
-                <div className='sidebarinfo'>
-                    <h2 className='bookClubsTitle'>{user.first_name}'s Book Clubs </h2>
-                    {bookClubsToDisplay}
-                </div>
-
-
-            </div>
+        {/* <SideBar
+                user={user}
+                setUser={setUser}
+                pageData={pageData}
+                page={'bookpage'}
+                userBookClubs={userBookClubs}
+                setUserBookClubs={setUserBookClubs}
+            /> */}
 
             <div className='display' >
                 <FeaturedBook
