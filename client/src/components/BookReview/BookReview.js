@@ -66,17 +66,15 @@ export default function BookReview({ review, user, madeByUser, bookReviews, setB
     //function to avoid re-reaction more than once
 
     function handleSelectReaction(e) {
-        let includesReact = reactions.map(reaction => (reaction.emoji === e) && (reaction.user.id === user.id)).includes(true)
+        let includesReact = reactions.map(reaction => (reaction.emoji === e) && (reaction.by === user.username)).includes(true)
         if (!includesReact) {
-            let reaction = {
+            let count = {
                 emoji: e,
                 user_id: user.id,
                 review_id: review.id
             }
-            axios.post('/reactions', reaction)
-                .then(r => {
-                    setCounters([...reactions, r.data])
-                })
+            axios.post('/reactions', count)
+                .then(r => setCounters([...counters, r.data]))
         }
     }
 
@@ -88,9 +86,10 @@ export default function BookReview({ review, user, madeByUser, bookReviews, setB
         }
         axios.post('/removereaction', reactionToDelete)
             .then(r => {
-                let filteredCounters = reactions.filter(reaction => reaction.id !== r.data.id)
+                let filteredCounters = counters.filter(reaction => reaction.id !== r.data.id)
                 setCounters(filteredCounters)
             })
+
     }
 
     let displayBookTitle = onProfile ? review.book_name + ' - ' + review.book_author : ''
