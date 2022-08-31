@@ -1,8 +1,6 @@
 //send all the setup in colors and variables to others scss components if 
 //we use the @use '../../styles' in there file.
 
-
-
-
 @forward './colors';
 @forward './variables';
+@forward './mixins';

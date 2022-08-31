@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function BookReview({ review, user, madeByUser, bookReviews, setBookReviews, handleClickEdit, inEditMode, onProfile }) {
 
-    let [reactions, setReactions] = useState(review.reactions)
+    let [counters, setCounters] = useState(review.reactions)
 
     let [displayEmojis, setDisplayEmojis] = useState(false)
 
@@ -16,6 +16,14 @@ export default function BookReview({ review, user, madeByUser, bookReviews, setB
     function handleClickProfile() {
         navigate('/profile/' + review.user.username)
     }
+
+
+    let reactions = counters.map(reaction => {
+        return {
+            "emoji": reaction.emoji,
+            "by": reaction.user.username
+        }
+    })
 
 
     function handleClickDelete() {
@@ -58,7 +66,7 @@ export default function BookReview({ review, user, madeByUser, bookReviews, setB
     //function to avoid re-reaction more than once
 
     function handleSelectReaction(e) {
-        let includesReact = reactions.map(reaction => (reaction.emoji === e) && (reaction.by === user.username)).includes(true)
+        let includesReact = reactions.map(reaction => (reaction.emoji === e) && (reaction.user.id === user.id)).includes(true)
         if (!includesReact) {
             let reaction = {
                 emoji: e,
@@ -67,7 +75,7 @@ export default function BookReview({ review, user, madeByUser, bookReviews, setB
             }
             axios.post('/reactions', reaction)
                 .then(r => {
-                    setReactions([...reactions, r.data])
+                    setCounters([...reactions, r.data])
                 })
         }
     }
@@ -81,11 +89,9 @@ export default function BookReview({ review, user, madeByUser, bookReviews, setB
         axios.post('/removereaction', reactionToDelete)
             .then(r => {
                 let filteredCounters = reactions.filter(reaction => reaction.id !== r.data.id)
-                setReactions(filteredCounters)
+                setCounters(filteredCounters)
             })
     }
-
-    let counterClass = madeByUser ? 'reactionCounter madebyuser' : 'reactionCounter'
 
     let displayBookTitle = onProfile ? review.book_name + ' - ' + review.book_author : ''
 
@@ -93,6 +99,18 @@ export default function BookReview({ review, user, madeByUser, bookReviews, setB
         navigate('/book/' + review.book_id)
     }
 
+    let reactionsTypeCount = new Set(reactions.map(reaction=>reaction.emoji)).size
+
+    let numbers = {
+        '0':'zero',
+        '1':'one',
+        '2':'two',
+        '3':'three',
+        '4':'four',
+        '5':'five',
+        '6':'six'
+    }
+    let counterClass = (madeByUser ? "reactionCounter madebyuser" : "reactionCounter") + ' ' + numbers[reactionsTypeCount]
 
     return (
         <div className='userReviewCard' >

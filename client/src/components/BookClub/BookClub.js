@@ -224,7 +224,7 @@ export default function BookClub({ user, setUser, bookClubs, setBookClubs, userB
             </div >
             <div className="profileCardBottom clubCardBottom">
                 <div className="bookClubcontainer">
-                    <h1>Reading List:</h1>
+                    <h2>Reading List:</h2>
                     {booksToDisplay}
                 </div>
             </div >

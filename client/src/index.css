@@ -528,17 +528,105 @@
 .reactionCounter span:nth-of-type(1) {
   font-size: 13px !important;
   margin-top: -5% !important;
+  color: white;
 }
-.reactionCounter div:nth-child(2) span:nth-of-type(1) {
+.reactionCounter h5 {
+  margin-top: 5px;
+  margin-bottom: 2px;
+  margin-right: 1%;
+}
+.reactionCounter span:nth-of-type(1) {
+  font-size: 13px !important;
+  margin-top: -5% !important;
+}
+.reactionCounter.zero div:nth-of-type(1) span:nth-of-type(1) {
   visibility: hidden;
   position: relative;
 }
-.reactionCounter div:nth-child(2) span:nth-of-type(1):after {
+.reactionCounter.zero div:nth-of-type(1) span:nth-of-type(1):after {
   color: black;
   font-size: 20px;
   position: absolute;
-  top: -30%;
-  left: 0%;
+  top: -35%;
+  left: -5.5%;
+  visibility: visible;
+  content: " + " !important;
+}
+.reactionCounter.one div:nth-of-type(2) span:nth-of-type(1) {
+  visibility: hidden;
+  position: relative;
+}
+.reactionCounter.one div:nth-of-type(2) span:nth-of-type(1):after {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: -35%;
+  left: -5.5%;
+  visibility: visible;
+  content: " + " !important;
+}
+.reactionCounter.two div:nth-of-type(3) span:nth-of-type(1) {
+  visibility: hidden;
+  position: relative;
+}
+.reactionCounter.two div:nth-of-type(3) span:nth-of-type(1):after {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: -35%;
+  left: -5.5%;
+  visibility: visible;
+  content: " + " !important;
+}
+.reactionCounter.three div:nth-of-type(4) span:nth-of-type(1) {
+  visibility: hidden;
+  position: relative;
+}
+.reactionCounter.three div:nth-of-type(4) span:nth-of-type(1):after {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: -35%;
+  left: -5.5%;
+  visibility: visible;
+  content: " + " !important;
+}
+.reactionCounter.four div:nth-of-type(5) span:nth-of-type(1) {
+  visibility: hidden;
+  position: relative;
+}
+.reactionCounter.four div:nth-of-type(5) span:nth-of-type(1):after {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: -35%;
+  left: -5.5%;
+  visibility: visible;
+  content: " + " !important;
+}
+.reactionCounter.five div:nth-of-type(6) span:nth-of-type(1) {
+  visibility: hidden;
+  position: relative;
+}
+.reactionCounter.five div:nth-of-type(6) span:nth-of-type(1):after {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: -35%;
+  left: -5.5%;
+  visibility: visible;
+  content: " + " !important;
+}
+.reactionCounter.six div:nth-of-type(7) span:nth-of-type(1) {
+  visibility: hidden;
+  position: relative;
+}
+.reactionCounter.six div:nth-of-type(7) span:nth-of-type(1):after {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: -35%;
+  left: -5.5%;
   visibility: visible;
   content: " + " !important;
 }
@@ -1152,30 +1240,29 @@
 }
 
 .bookClub {
-  background-color: plum;
+  background-color: #C5B7A4;
 }
 .bookClub .users {
-  background-color: black;
   padding: 10px;
 }
 
 .bookClubcontainer {
   width: 100%;
   margin-top: -5%;
-  background-color: aquamarine;
+  background-color: #e3d4c1;
   border-radius: 0px 0px 5px 5px;
 }
-.bookClubcontainer h1 {
-  background-color: peachpuff;
+.bookClubcontainer h2 {
+  background-color: #e3d4c1;
   margin-bottom: -1%;
   padding-left: 25px;
   transition: 0.5s;
 }
-.bookClubcontainer h1:hover {
+.bookClubcontainer h2:hover {
   cursor: pointer;
-  color: white;
+  color: black;
 }
-.bookClubcontainer h1 span {
+.bookClubcontainer h2 span {
   font-size: 20px;
 }
 
@@ -1192,7 +1279,7 @@
   margin-left: 0%;
   margin-right: 0%;
   border-radius: 5px;
-  background-color: violet;
+  background-color: #e3d4c1;
 }
 
 .bookClubButtons {

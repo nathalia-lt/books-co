@@ -9,10 +9,9 @@
 }
 
 .bookClub {
-  background-color: plum;
+  background-color: #C5B7A4;
 
   .users {
-    background-color: black;
     padding: 10px;
   }
 }
@@ -20,16 +19,16 @@
 .bookClubcontainer {
   width: 100%;
   margin-top: -5%;
-  background-color: aquamarine;
+    background-color: #e3d4c1;
   border-radius:0px 0px s.$radius s.$radius;
-  h1 {
-    background-color: s.$primary;
+  h2 {
+    background-color: #e3d4c1;
     margin-bottom: -1%;
     padding-left: 25px;
     transition: 0.5s;
     &:hover {
       cursor: pointer;
-      color: white;
+      color: black;
     }
 
     span {
@@ -52,7 +51,7 @@
       margin-left: 0%;
       margin-right: 0%;
       border-radius: s.$radius;
-      background-color: violet;
+    background-color: #e3d4c1;
     }
   }
 
