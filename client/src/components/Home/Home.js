@@ -27,7 +27,7 @@ export default function Home({ user, setUser, userShelves, setUserShelves, userB
         )
     })
 
-    let bookClubsToDisplay = userBookClubs.sort((a, b) => a.id - b.id).map((club, idx) => {
+let bookClubsToDisplay = userBookClubs.sort((a, b) => a.id - b.id).map((club, idx) => {
         return (
             <HomeShelfContainer shelf={club.bookclub} type='club' userShelves={userShelves} setUserShelves={setUserShelves} idx={idx} />
         )

@@ -3425,7 +3425,7 @@ Bookclub.create!([
   },
 ])
 
-Clubuser.create!(user_id: 1, bookclub_id: 1)
+Clubuser.create!(user_id: 1, bookclub_id: 4)
 
 for bookclub in Bookclub.all
   books = bookclub.books

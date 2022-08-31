@@ -124,3 +124,15 @@
 .profileImage{
     height: 80px;
 }
+
+.clubUserCard {
+  cursor: pointer;
+  &:hover {
+    color: rgba(s.$text, 0.5);
+  }
+}
+
+.profileShelfBookCardSubTitle{
+  text-align: center;
+  font-size: 13px;
+}

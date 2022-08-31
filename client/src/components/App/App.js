@@ -44,6 +44,7 @@ function App() {
         user={user}
         setUser={setUser}
         setUserShelves={setUserShelves}
+        setUserBookClubs={setUserBookClubs}
       />
       <hr></hr>
       <Routes>

@@ -5,7 +5,7 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom";
 
 
-export default function Header({ setSearchResults, user, setUser, setUserShelves }) {
+export default function Header({ setSearchResults, user, setUser, setUserShelves,setUserBookClubs }) {
     let navigate = useNavigate() //I use useNavigate to send me to a new page
 
     let [searchTerm, setSearchTerm] = useState('')
@@ -89,6 +89,7 @@ const handleLogOut = () => {
             setClickedProfileMenu(false)
             setUser({})}) 
             setUserShelves([])
+            setUserBookClubs([])
             alert('You are now logged out')
 }
 

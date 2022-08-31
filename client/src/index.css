@@ -1180,6 +1180,18 @@
   height: 80px;
 }
 
+.clubUserCard {
+  cursor: pointer;
+}
+.clubUserCard:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.profileShelfBookCardSubTitle {
+  text-align: center;
+  font-size: 13px;
+}
+
 .aboutPageContainer {
   display: flex;
   justify-content: center;
