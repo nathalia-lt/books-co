@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :shelves, only: [:create,:destroy]
   resources :reviews, only: [:index,:destroy,:create,:update]
   resources :reactions, only: [:destroy,:create]
-  resources :bookclubs, only: [:index,:destroy,:create,:update]
+  resources :bookclubs, only: [:index,:show,:destroy,:create,:update]
   resources :clubusers, only: [:create,:destroy]
 
   #Authentication
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get "/usershelves", to: "shelves#user_shelves"
   post "/addbook", to: "shelves#add_book"
   post "/removebook", to: "shelves#remove_book"
-  post "/deleteshelf", to: "shelves#destroy"
+  post "/removeshelf", to: "shelves#destroy"
   post "/clearstatus", to: "shelves#clear_status"
   post "/updatestatus", to: "shelves#update_status"
 
@@ -35,8 +35,11 @@ Rails.application.routes.draw do
   #Bookclub
   post 'addbooktoclub', to: "bookclubs#add_book"
   post 'removebookfromclub', to: "bookclubs#remove_book"
+  post 'bookclubusers', to: "bookclubs#club_users"
+  post 'removebookclub', to: "bookclubs#destroy"
 
   #Clubuser
+  get 'userclubusers', to: "clubusers#user_clubusers"
   post 'removeclubuser', to: "clubusers#destroy"
 
 

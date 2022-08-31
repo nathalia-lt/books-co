@@ -2,21 +2,29 @@
 
 .homeContainer {
     padding: 35px;
+    padding-left: 10px;
     padding-top: 0px;
     height: 87.5vh;
 }
 
 .homeshelfrow {
-    margin-top: -10px;
-    transform: scale(0.7);
+    margin-top: -20px;
+    transform: scale(0.8);
+    display: flex;
+    justify-content: flex-start;
+
+    .bookClubCard {
+        margin-right: 2.5%;
+    }
 
     h3 {
-        transform: scale(1);
+        // transform: scale(1);
     }
 
     .bookContainer {
         justify-content: flex-start;
-        margin-left: -15%;
+        // margin-left: -10%;
+        width: 100%;
     }
 }
 

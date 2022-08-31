@@ -14,16 +14,22 @@ import Community from '../Community/Community'
 function App() {
   let [user,setUser] = useState({})
   let [userShelves, setUserShelves] = useState([])
+  let [userBookClubs, setUserBookClubs] = useState([])
+  let [bookClubs, setBookClubs] = useState([])
 
 
   //get user info every single time the webpage is load and alsov conecting frontEnd with backEnd
   useEffect(() => {
     let meRequest = axios.get('/me')
     let shelvesRequest = axios.get('/usershelves')
-    axios.all([meRequest, shelvesRequest])
-      .then(axios.spread((res1, res2) => {
+    let userBookClubsReq = axios.get('/userclubusers')
+    let bookClubsReq = axios.get('/bookclubs')
+    axios.all([meRequest, shelvesRequest, userBookClubsReq, bookClubsReq,])
+      .then(axios.spread((res1, res2, res3, res4) => {
         setUser(res1.data)
         setUserShelves(res2.data)
+        setUserBookClubs(res3.data)
+        setBookClubs(res4.data)
       }))
   }, [])
 
@@ -48,6 +54,8 @@ let [searchResults, setSearchResults] = useState({})
             setUser={setUser}
             userShelves={userShelves}
             setUserShelves={setUserShelves}
+            userBookClubs={userBookClubs}
+            setUserBookClubs={setUserBookClubs}
           />
         }
         />
