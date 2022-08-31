@@ -1,0 +1,25 @@
+@use '../../styles' as s;
+
+.sideBar{
+    display: flex;
+    flex-direction: column;
+    background-color: #95BDB6;
+    height: 100%;
+    width: 25%;
+    align-items: center;
+}
+
+.sideBarBookClubsTitle {
+    margin-bottom: 0%;
+    background-color: orange;
+    padding: 10px;
+    border-radius: s.$radius s.$radius 0px 0px;
+  }
+  
+  .sideBarBookClubsContainer {
+    background-color: hotpink;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 0px 0px s.$radius s.$radius;
+  }

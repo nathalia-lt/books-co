@@ -1,1 +1,49 @@
-@use '../../styles'as s;
+@use "../../styles" as s;
+
+.communityDisplay {
+  display: flex;
+  flex-direction: column;
+//   background-color: pink;
+  height: 130%;
+  width: 80%;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: hidden;
+
+  div {
+    // color: s.$text;
+  }
+}
+
+.commContainer {
+  height: 100%;
+  width: 100%;
+  background-color: maroon;
+  padding: 30px;
+  padding-top: 10px;
+  color: s.$text;
+}
+
+.clubsContainer {
+  background-color: skyblue;
+  height: 89.5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px;
+  overflow-y: scroll;
+  border-radius: s.$radius;
+}
+
+.communityTitle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .searchBar{
+    margin-top: 10px;
+    font-size: 20px;
+  }
+}

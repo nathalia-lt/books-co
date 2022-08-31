@@ -59,7 +59,7 @@
 }
 
 .reviewContainer {
-  background-color: #FFE4CF;
+  background-color: #E3D4C1;
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -68,6 +68,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  padding-bottom: 40px;
 }
 
 .reviewInfo {
@@ -936,7 +937,9 @@
   margin-left: 20%;
   margin-right: 20%;
   background-color: #FAEBD7;
-  height: 850px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   padding: 50px;
   border-radius: 5px;
 }
@@ -948,18 +951,28 @@
 }
 
 .profileCardBottom {
-  background-color: #FAEBD7;
+  background-color: #E3D4C1;
   border-radius: 5px;
-  height: 36.5%;
+  height: 40%;
 }
 .profileCardBottom .reviewContainer {
   height: inherit;
+}
+.profileCardBottom.clubCardBottom {
+  height: 100%;
 }
 
 .profilecardtitle {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+}
+.profilecardtitle img {
+  height: 80px;
+  margin: 10px 10px 0px 10px;
+  border: 2px solid black;
+  border-radius: 50px;
+  max-width: 80px;
 }
 
 .profilecardsubtitle {
@@ -1182,6 +1195,71 @@
   text-align: center;
 }
 
+.communityDisplay {
+  display: flex;
+  flex-direction: column;
+  height: 130%;
+  width: 80%;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: hidden;
+}
+.commContainer {
+  height: 100%;
+  width: 100%;
+  background-color: maroon;
+  padding: 30px;
+  padding-top: 10px;
+  color: black;
+}
+
+.clubsContainer {
+  background-color: skyblue;
+  height: 89.5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px;
+  overflow-y: scroll;
+  border-radius: 5px;
+}
+
+.communityTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.communityTitle .searchBar {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  background-color: #95BDB6;
+  height: 100%;
+  width: 25%;
+  align-items: center;
+}
+
+.sideBarBookClubsTitle {
+  margin-bottom: 0%;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.sideBarBookClubsContainer {
+  background-color: hotpink;
+  padding: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 0px 0px 5px 5px;
+}
+
 body {
   background-color: rgb(250, 235, 215);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -1199,17 +1277,7 @@ body {
   background-color: greenyellow;
   height: 730px;
   justify-content: center;
-  align-items: center;
   align-content: center;
-}
-
-.sideBar {
-  display: flex;
-  flex-direction: column;
-  background-color: #95BDB6;
-  height: 100%;
-  width: 25%;
-  align-items: center;
 }
 
 .display {

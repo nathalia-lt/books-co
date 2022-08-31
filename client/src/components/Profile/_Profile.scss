@@ -8,7 +8,7 @@
   margin-left: 20%;
   margin-right: 20%;
   background-color: #FAEBD7;
-  height: 850px;
+  height:fit-content;
   padding: 50px;
   border-radius: s.$radius;
 }
@@ -19,12 +19,16 @@
   height: 63.5%;
 }
 .profileCardBottom {
-  background-color: #FAEBD7;
+  background-color: #E3D4C1;
   border-radius: s.$radius;
-  height: 36.5%;
+  height: 40%;
 
   .reviewContainer{
     height: inherit;
+  }
+
+  &.clubCardBottom {
+    height: 100%;
   }
 }
 
@@ -32,6 +36,13 @@
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  img {
+    height: 80px;
+    margin: 10px 10px 0px 10px;
+    border: 2px solid s.$text;
+    border-radius: 50px;
+    max-width: 80px;
+  }
 }
 
 .profilecardsubtitle {

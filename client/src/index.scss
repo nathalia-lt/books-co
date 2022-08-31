@@ -15,6 +15,7 @@
 @use './components/BookClub/BookClub';
 @use './components/BookClubCard/BookClubCard';
 @use './components/Community/Community';
+@use './components/Sidebar/Sidebar';
 
 //Semi colon
 
@@ -36,18 +37,9 @@ body{
     background-color: greenyellow;
     height: 730px;
     justify-content: center;
-    align-items: center;
     align-content: center;
 }
 
-.sideBar{
-    display: flex;
-    flex-direction: column;
-    background-color: #95BDB6;
-    height: 100%;
-    width: 25%;
-    align-items: center;
-}
 
 .display{
     display: flex;
