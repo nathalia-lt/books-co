@@ -287,7 +287,7 @@
 }
 
 .bookPageCardMain {
-  background-color: #FFE4CF;
+  background-color: #e3d4c1;
   height: 100%;
   width: 65%;
   border-top-right-radius: 3%;
@@ -1215,8 +1215,14 @@
 .aboutPage h1 {
   font-family: sans-serif;
 }
+.aboutPage div,
+.aboutPage li,
 .aboutPage h4 {
   align-self: flex-start;
+}
+
+.createdby {
+  margin-top: -3%;
 }
 
 .icons {

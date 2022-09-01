@@ -19,7 +19,6 @@
 .userReviewTitle {
     display: flex;
     flex-direction: row;
-    // justify-content: space-between;
     align-items: center;
     width: 50%;
 
@@ -70,7 +69,6 @@
 
     span:nth-of-type(1) {
         font-size: 13px !important;
-        // align-self: center !important;
         margin-top: -5% !important;
         color: white;
     }
@@ -194,7 +192,6 @@
 
 .reviewProfile {
     height: 24px;
-    //border: 2px solid black;
     border-radius: s.$radius;
 }
 
