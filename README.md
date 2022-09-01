@@ -48,7 +48,9 @@ An interactive book resource application where users can search for new books to
 * Run the following commands in two seperate terminals:
 
 ```
-// install and start the frontend interface
-npm install 
-npm start --prefix client
+// install and start the server
+bundle install
+rails s 
+\
 ```
+
