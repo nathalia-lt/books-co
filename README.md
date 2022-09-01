@@ -18,7 +18,7 @@ An interactive book resource application where users can search for new books to
 
 
 # Demo:
- <!-- <img src='eventhunter.gif' width='' /> -->
+ <img src='book-co1.gif' width='' />
 
 
  #
